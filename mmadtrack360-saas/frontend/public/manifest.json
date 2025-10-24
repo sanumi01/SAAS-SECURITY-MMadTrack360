@@ -1,0 +1,21 @@
+{
+  "short_name": "MMadTrack360",
+  "name": "MMadTrack360 Staff Portal",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "description": "Enterprise staff management, location, check-in, and alerts."
+}

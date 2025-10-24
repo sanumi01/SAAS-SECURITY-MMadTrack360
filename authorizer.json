@@ -1,0 +1,10 @@
+{
+  "apiId": "2fnaijjjz9",
+  "authorizerType": "JWT",
+  "identitySource": "$request.header.Authorization",
+  "name": "MMadTrack360JWT",
+  "jwtConfiguration": {
+    "issuer": "https://your-auth-provider.com",
+    "audience": ["MMadTrack360"]
+  }
+}

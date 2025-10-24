@@ -1,0 +1,23 @@
+{
+  "name": "mmadtrack360-backend",
+  "version": "1.0.0",
+  "description": "MMadTrack360 Backend API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "deploy": "node scripts/deploy.js",
+    "deploy-function": "npm run deploy -- --function",
+    "local": "sam local start-api"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1498.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.1",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "aws-sam-cli": "^1.100.0"
+  }
+}
