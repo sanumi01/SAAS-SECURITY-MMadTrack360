@@ -1,0 +1,10 @@
+
+=== MMadTrack360 Component Audit @ 2025-10-24 20:07:59 ===
+http://localhost:5173/login ? ? Status: 200
+http://localhost:5173/admin ? ? Status: 200
+http://localhost:5173/admin/dashboard ? ? Status: 200
+http://localhost:5173/admin/settings ? ? Status: 200
+http://localhost:5173/staff ? ? Status: 200
+http://localhost:5173/staff/dashboard ? ? Status: 200
+http://localhost:5173/staff/tasks ? ? Status: 200
+http://localhost:5173/preview ? ? Status: 200

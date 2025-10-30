@@ -1,31 +1,16 @@
+
 import React from "react";
-import { cognitoConfig } from "../auth/cognito-config";
+import { useNavigate } from "react-router-dom";
 
 const LoginButton = () => {
-  const { domain, clientId, redirectUri, responseType, scopes } = cognitoConfig;
-  const scopeParam = scopes.join("+");
-
-  const loginUrl = `${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=${scopeParam}&redirect_uri=${redirectUri}`;
-
+  const navigate = useNavigate();
   return (
-    <button
-      onClick={() => (window.location.href = loginUrl)}
-      style={{
-        padding: "14px 28px",
-        fontSize: "18px",
-        backgroundColor: "#00bfff",
-        color: "#fff",
-        border: "none",
-        borderRadius: "8px",
-        cursor: "pointer",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-        transition: "transform 0.2s ease-in-out",
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-    >
-      Login with MMadTrack360
-    </button>
+    <div style={{ textAlign: "center", padding: "40px" }}>
+      <h2>Choose Login Option</h2>
+      <button style={{margin: "10px", padding: "14px 28px"}} onClick={() => navigate("/admin")}>Admin Login</button>
+      <button style={{margin: "10px", padding: "14px 28px"}} onClick={() => navigate("/staff")}>Staff Login</button>
+      <button style={{margin: "10px", padding: "14px 28px"}} onClick={() => navigate("/admin-signup")}>Admin Signup</button>
+    </div>
   );
 };
 

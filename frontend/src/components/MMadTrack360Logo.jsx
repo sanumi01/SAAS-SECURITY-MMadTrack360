@@ -2,7 +2,7 @@ import React from "react";
 
 const MMadTrack360Logo = ({ style }) => (
   <img
-    src="/src/assets/MMAD_App_logo.jpeg"
+    src="/MMAD_App_logo.jpeg"
     alt="MMadTrack360 Logo"
     style={{
       width: style?.width || 120,

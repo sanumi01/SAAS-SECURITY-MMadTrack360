@@ -1,0 +1,30 @@
+
+=== MMadTrack360 Full Preview @ 2025-10-24 19:18:34 ===
+http://localhost:5173/login ? ? Error: Unable to connect to the remote server
+http://localhost:5173/admin ? ? Error: Unable to connect to the remote server
+http://localhost:5173/admin/dashboard ? ? Error: Unable to connect to the remote server
+http://localhost:5173/admin/settings ? ? Error: Unable to connect to the remote server
+http://localhost:5173/staff ? ? Error: Unable to connect to the remote server
+http://localhost:5173/staff/dashboard ? ? Error: Unable to connect to the remote server
+http://localhost:5173/staff/tasks ? ? Error: Unable to connect to the remote server
+http://localhost:5173/preview ? ? Error: Unable to connect to the remote server
+
+=== MMadTrack360 Full Preview @ 2025-10-24 19:57:25 ===
+http://localhost:5173/login ? ? Status: 200 | Server: 
+http://localhost:5173/admin ? ? Status: 200 | Server: 
+http://localhost:5173/admin/dashboard ? ? Status: 200 | Server: 
+http://localhost:5173/admin/settings ? ? Status: 200 | Server: 
+http://localhost:5173/staff ? ? Status: 200 | Server: 
+http://localhost:5173/staff/dashboard ? ? Status: 200 | Server: 
+http://localhost:5173/staff/tasks ? ? Status: 200 | Server: 
+http://localhost:5173/preview ? ? Status: 200 | Server: 
+
+=== MMadTrack360 Full Preview @ 2025-10-24 20:02:12 ===
+http://localhost:5173/login ? ? Status: 200 | Server: 
+http://localhost:5173/admin ? ? Status: 200 | Server: 
+http://localhost:5173/admin/dashboard ? ? Status: 200 | Server: 
+http://localhost:5173/admin/settings ? ? Status: 200 | Server: 
+http://localhost:5173/staff ? ? Status: 200 | Server: 
+http://localhost:5173/staff/dashboard ? ? Status: 200 | Server: 
+http://localhost:5173/staff/tasks ? ? Status: 200 | Server: 
+http://localhost:5173/preview ? ? Status: 200 | Server: 

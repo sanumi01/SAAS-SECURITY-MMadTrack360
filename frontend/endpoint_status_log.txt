@@ -1,0 +1,5 @@
+=== Endpoint Status Check @ 2025-10-24 19:13:53 ===
+http://localhost:5173/admin ? ? Error: Unable to connect to the remote server
+http://localhost:5173/staff ? ? Error: Unable to connect to the remote server
+http://localhost:5173/dashboard ? ? Error: Unable to connect to the remote server
+http://localhost:5173/preview ? ? Error: Unable to connect to the remote server
