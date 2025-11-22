@@ -1,0 +1,9 @@
+02/11/2025 14:34:19 - ? admin/signup failed: The remote server returned an error: (403) Forbidden.
+02/11/2025 14:34:19 - ? admin/login failed: The remote server returned an error: (403) Forbidden.
+02/11/2025 14:34:19 - ? staff/login failed: The remote server returned an error: (403) Forbidden.
+02/11/2025 14:37:47 - Token fetch failed: The remote server returned an error: (403) Forbidden.
+02/11/2025 14:41:55 - Token fetch failed: The remote server returned an error: (403) Forbidden.
+02/11/2025 14:46:37 - ? AWS Identity confirmed: arn:aws:iam::376467672970:root
+02/11/2025 14:46:43 - ? SES email sent: MessageId = 
+02/11/2025 14:46:48 - ? Verified SES emails: mamaadsolution@gmail.com
+02/11/2025 15:38:14 - Token fetch failed: The remote server returned an error: (403) Forbidden.

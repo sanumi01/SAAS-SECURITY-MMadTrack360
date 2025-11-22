@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard  MMadTrack360</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="display:flex">
+    <!-- Sidebar -->
+    <aside class="sidebar" style="padding:16px">
+      <div class="brand" style="margin-bottom:18px">
+        <div class="brand-logo">M</div>
+        <div>
+          <div style="font-weight:800;color:var(--cyan)">MMadTrack360</div>
+          <div class="muted" style="font-size:12px">Admin</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html" class="active"> Dashboard</a>
+        <a href="#"> Staff</a>
+        <a href="#"> Shifts</a>
+        <a href="billing.html"> Subscriptions</a>
+        <a href="#"> Settings</a>
+      </nav>
+      <div style="margin-top:14px">
+        <button class="btn btn-ghost" onclick="Auth.logout()"> Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main style="flex:1;padding:24px">
+      <div class="row" style="justify-content:space-between">
+        <h1 style="margin:0">Dashboard</h1>
+        <a href="billing.html" class="btn btn-primary">Manage Subscription</a>
+      </div>
+
+      <div id="trialBanner" class="card" style="margin-top:16px"></div>
+
+      <div class="grid grid-4" style="margin-top:18px">
+        <div class="stat"><div class="muted">Total Staff</div><div class="kpi">147</div></div>
+        <div class="stat"><div class="muted">Active Now</div><div class="kpi" style="color:var(--green)">89</div></div>
+        <div class="stat"><div class="muted">Incidents (wk)</div><div class="kpi" style="color:var(--amber)">23</div></div>
+        <div class="stat"><div class="muted">Response Time</div><div class="kpi">2.4m</div></div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:18px">
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:8px">Recent Activity</div>
+          <div class="muted">Weekly reports, incidents, and updates appear here.</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:8px">Quick Actions</div>
+          <div class="actions">
+            <button class="btn btn-secondary"> Add Staff</button>
+            <button class="btn btn-secondary"> Create Shift</button>
+            <a class="btn btn-secondary" href="billing.html"> Subscription</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script>
+    if (!Auth.requireRole('admin')) throw new Error('Not admin');
+    if (!Billing.requireActiveOrTrial()) throw new Error('Inactive');
+
+    const sub = Billing.getSubscription(), left = Billing.daysLeft();
+    const banner = document.getElementById('trialBanner');
+    banner.innerHTML = '<div class="row" style="justify-content:space-between">'+
+      '<div><div class="muted">Subscription</div>'+
+      '<div style="font-weight:800;color:var(--cyan)">Plan: '+((sub && sub.plan)||'none').toUpperCase()+(sub && sub.status==='trial'?' (Trial)':'')+'</div>'+
+      (sub && sub.status==='trial' ? '<div class="muted">Days left: <b>'+left+'</b></div>' : '')+
+      '</div>'+
+      '<div><a href="billing.html" class="btn btn-ghost">Manage</a></div>'+
+      '</div>';
+  </script>
+</body>
+</html>

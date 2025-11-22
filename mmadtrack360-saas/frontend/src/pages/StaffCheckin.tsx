@@ -41,7 +41,7 @@ export default function StaffCheckin() {
     { name: 'Checked In', value: checkedIn ? 1 : 0 },
     { name: 'Not Checked In', value: checkedIn ? 0 : 1 },
   ]
-  const COLORS = ['#10B981', '#F59E42']
+  const COLORS = ['var(--success)', 'var(--warning)']
   const checkinStatus = filter ? checkinStatusRaw.filter(s => s.name === filter) : checkinStatusRaw
 
   // Stat cards mockup
@@ -113,7 +113,7 @@ export default function StaffCheckin() {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#10B981', borderRadius: '8px', border: 'none' }} />
+                <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--success)', borderRadius: '8px', border: 'none' }} />
                 <Legend />
               </PieChart>
             </ResponsiveContainer>

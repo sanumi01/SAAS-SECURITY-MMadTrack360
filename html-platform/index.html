@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MMadTrack360 Enterprise Security</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-br from-blue-700 to-blue-900 text-white font-sans">
+    <div class="flex flex-col items-center justify-center min-h-screen px-4">
+      <div class="text-center mb-8">
+        <div class="text-5xl font-bold mb-2">M</div>
+        <div class="text-3xl font-semibold">MMadTrack360</div>
+        <div class="text-lg opacity-80">Enterprise Security Platform</div>
+      </div>
+
+      <form id="loginForm" class="bg-white text-black rounded-lg shadow-lg p-6 w-full max-w-md space-y-4">
+        <label class="block">
+          <span class="text-sm font-medium" id="label-email">Email</span>
+          <input type="text" id="emailOrId" class="mt-1 w-full px-3 py-2 border rounded" placeholder="admin@mmadtrack360.com" required />
+        </label>
+
+        <label class="block">
+          <span class="text-sm font-medium">Password</span>
+          <input type="password" id="password" class="mt-1 w-full px-3 py-2 border rounded" placeholder="Enter password" required />
+        </label>
+
+        <label class="block">
+          <span class="text-sm font-medium">Login As</span>
+          <select id="role" class="mt-1 w-full px-3 py-2 border rounded">
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+          </select>
+        </label>
+
+        <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded hover:bg-blue-800">
+          Sign In to Enterprise Platform
+        </button>
+
+        <div class="flex justify-between text-sm mt-2">
+          <a href="request-reset.html" class="text-blue-600 hover:underline">Forgot Password?</a>
+          <a href="create-admin.html" class="text-blue-600 hover:underline">Create Account</a>
+        </div>
+      </form>
+
+      <div class="mt-6 text-sm text-center opacity-80">
+        🔐 RBAC • 📊 Analytics • 🤖 AI Assistant • 💬 Communication Hub
+      </div>
+    </div>
+
+    <script>
+      const roleSelect = document.getElementById('role');
+      const label = document.getElementById('label-email');
+      const input = document.getElementById('emailOrId');
+
+      roleSelect.addEventListener('change', () => {
+        if (roleSelect.value === 'staff') {
+          label.textContent = 'Staff ID';
+          input.placeholder = 'ST-001';
+        } else {
+          label.textContent = 'Email';
+          input.placeholder = 'admin@mmadtrack360.com';
+        }
+      });
+
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const role = roleSelect.value;
+        if (role === 'admin') {
+          window.location.href = 'admin-dashboard.html';
+        } else {
+          window.location.href = 'staff-dashboard.html';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - MMadTrack360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0f172a; color: #e2e8f0; font-family: Segoe UI, Tahoma, Verdana, sans-serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .btn { padding: 10px 20px; border-radius: 8px; border: none; font-weight: 600; }
+    .btn-primary { background: linear-gradient(135deg,#06b6d4,#3b82f6); color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold text-cyan-400">Admin Dashboard</h1>
+      <div class="space-x-2">
+        <a href="billing.html" class="btn btn-primary">Billing</a>
+        <button onclick="Auth.logout()" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+
+    <div class="card" id="trialBanner"></div>
+
+    <div class="card">
+      <h2 class="text-xl font-bold text-cyan-400 mb-3">Overview</h2>
+      <p class="text-slate-400">Your platform summary will appear here.</p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script>
+    if (!Auth.requireRole('admin')) throw new Error('Not admin');
+    if (!Billing.requireActiveOrTrial()) throw new Error('Inactive');
+
+    var sub = Billing.getSubscription(), left = Billing.daysLeft();
+    var b = document.getElementById('trialBanner');
+    b.innerHTML = '<div class="flex items-center justify-between">' +
+      '<div>' +
+        '<div class="text-slate-400 text-sm">Subscription</div>' +
+        '<div class="text-cyan-400 font-bold">Plan: ' + ((sub && sub.plan) || 'none').toUpperCase() +
+        (sub && sub.status === 'trial' ? ' (Trial)' : '') + '</div>' +
+        (sub && sub.status === 'trial' ? '<div class="text-slate-400 text-sm">Days left: <b>' + left + '</b></div>' : '') +
+      '</div>' +
+      '<div><a class="btn btn-primary" href="billing.html">Manage Billing</a></div>' +
+    '</div>';
+  </script>
+</body>
+</html>
+<section id='plans'>
+  <h2>Plans & Billing</h2>
+  <p>Apply offer codes:</p>
+  <ul>
+    <li><strong>LAUNCH50</strong>  50% off 3 months</li>
+    <li><strong>ANNUAL20</strong>  20% off annual</li>
+    <li><strong>REFER100</strong>  £100 credit</li>
+  </ul>
+  <button onclick="alert('Plan activated!')">Activate / Update Plan</button>
+</section>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>
+<section id='stripe'>
+  <h2>Stripe Billing</h2>
+  <p>Choose your plan:</p>
+  <button onclick="startStripeCheckout('basic')">Basic</button>
+  <button onclick="startStripeCheckout('pro')">Pro</button>
+  <button onclick="startStripeCheckout('enterprise')">Enterprise</button>
+</section>
+<script>
+function startStripeCheckout(plan) {
+  alert('Stripe checkout for ' + plan + ' plan would launch here.');
+}
+</script>

@@ -1,0 +1,11 @@
+﻿<div className="relative inline-block text-left">
+  <button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md hover:bg-gray-600" onclick="window.setActiveView && window.setActiveView('profile')">
+    👤 System Administrator ▼
+  </button>
+  <div className="absolute right-0 mt-2 w-56 origin-top-right bg-gray-800 border border-gray-700 rounded-md shadow-lg">
+    <div className="py-1">
+      <button onclick="window.setActiveView && window.setActiveView('profile')" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">👤 Profile Settings</button>
+      <button onclick="window.setActiveView && window.setActiveView('preferences')" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">🔧 Preferences</button>
+    </div>
+  </div>
+</div>

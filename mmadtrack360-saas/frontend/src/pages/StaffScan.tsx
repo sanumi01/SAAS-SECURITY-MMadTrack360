@@ -114,18 +114,18 @@ export default function StaffScan() {
             <ResponsiveContainer width="100%" height={180}>
               <AreaChart data={scanVolume} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="hour" stroke="#60A5FA" />
-                <YAxis stroke="#60A5FA" />
-                <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#3B82F6', borderRadius: '8px', border: 'none' }} />
+                <XAxis dataKey="hour" stroke="var(--primary-200)" />
+                <YAxis stroke="var(--primary-200)" />
+                <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--primary-500)', borderRadius: '8px', border: 'none' }} />
                 <Legend />
                  <Area
                    type="monotone"
                    dataKey="scans"
-                   stroke="#3B82F6"
-                   fill="#93C5FD"
+                   stroke="var(--primary-500)"
+                   fill="var(--primary-200)"
                    name="Scans"
                    isAnimationActive={true}
-                   activeDot={{ r: 8, fill: '#2563EB', stroke: '#fff', strokeWidth: 2 }}
+                   activeDot={{ r: 8, fill: 'var(--primary-500)', stroke: '#fff', strokeWidth: 2 }}
                  />
               </AreaChart>
             </ResponsiveContainer>

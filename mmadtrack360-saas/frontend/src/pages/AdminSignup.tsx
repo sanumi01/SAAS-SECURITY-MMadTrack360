@@ -28,9 +28,9 @@ export default function AdminSignup({ onSignup }: { onSignup: (admin: { username
   setToast('Signup successful!')
   setTimeout(() => setToast(''), 2000)
   onSignup({ username, password })
-    } catch (err) {
-  setError('Network error')
-  setToast('Network error!')
+    } catch {
+      setError('Network error');
+    } finally { setLoading(false); }
     }
   }
 

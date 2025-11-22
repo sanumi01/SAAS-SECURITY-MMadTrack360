@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Admin - MMadTrack360</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .form-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 360px;
+    }
+    h2 {
+      color: #00c6ff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 15px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
+      background: #00c6ff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #007acc;
+    }
+    .checkbox {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Create Admin Account</h2>
+    <form>
+      <label>Full Name</label>
+      <input type="text" placeholder="John Doe" required />
+
+      <label>Email Address</label>
+      <input type="email" placeholder="admin@mmadtrack360.com" required />
+
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+44 7123 456789" required />
+
+      <label>Role</label>
+      <select required>
+        <option value="">Select Role</option>
+        <option value="super">Super Admin</option>
+        <option value="manager">Zone Manager</option>
+        <option value="auditor">Security Auditor</option>
+      </select>
+
+      <label>Assigned Location</label>
+      <input type="text" placeholder="Larkhall HQ" required />
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required />
+
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Re-enter password" required />
+
+      <label class="checkbox">
+        <input type="checkbox" required /> I confirm this account has full access privileges.
+      </label>
+
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</body>
+</html>

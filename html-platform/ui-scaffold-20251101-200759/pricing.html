@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Plans - MMadTrack360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg,#0f172a,#1e293b); font-family: Segoe UI, Tahoma, Verdana, sans-serif; }
+    .card { background: #1e293bf2; border: 2px solid #334155; border-radius: 20px; padding: 40px; transition: .2s; position: relative; }
+    .card:hover { transform: translateY(-6px); border-color: #06b6d4; box-shadow: 0 16px 40px rgba(6,182,212,.3); }
+    .popular { border-color: #06b6d4; background: linear-gradient(135deg, rgba(6,182,212,.1), rgba(30,41,59,.95)); }
+    .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg,#06b6d4,#3b82f6); color: #fff; padding: 6px 18px; border-radius: 20px; font-weight: 700; font-size: 12px; }
+    .btn { padding: 14px 28px; border-radius: 10px; font-weight: 700; border: none; }
+    .btn-primary { background: linear-gradient(135deg,#06b6d4,#3b82f6); color: #fff; }
+  </style>
+</head>
+<body class="min-h-screen p-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-10">
+      <h1 class="text-5xl font-bold text-cyan-400">Choose Your Plan</h1>
+      <p class="text-slate-300 mt-2">14-day free trial for Basic. Upgrade anytime.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="card">
+        <div class="text-center mb-4">
+          <div class="text-4xl mb-2"></div>
+          <div class="text-2xl text-slate-100 font-bold">Basic</div>
+          <div class="text-4xl text-cyan-400 font-bold">£14.99<span class="text-lg text-slate-400">/mo</span></div>
+          <div class="text-green-400 text-sm">14-day free trial</div>
+        </div>
+        <ul class="text-slate-300 text-sm space-y-2 mb-5">
+          <li>Up to 25 staff</li>
+          <li>Basic scheduling</li>
+          <li>Email notifications</li>
+          <li>Mobile app access</li>
+        </ul>
+        <a class="btn btn-primary w-full block text-center" href="admin-signup.html?plan=basic">Start Free Trial</a>
+      </div>
+      <div class="card popular">
+        <div class="badge"> MOST POPULAR</div>
+        <div class="text-center mb-4">
+          <div class="text-4xl mb-2"></div>
+          <div class="text-2xl text-slate-100 font-bold">Pro</div>
+          <div class="text-4xl text-cyan-400 font-bold">£39.99<span class="text-lg text-slate-400">/mo</span></div>
+          <div class="text-yellow-400 text-xs">Use code LAUNCH50 for 50% off 3 months</div>
+        </div>
+        <ul class="text-slate-300 text-sm space-y-2 mb-5">
+          <li>Up to 100 staff</li>
+          <li>Advanced scheduling</li>
+          <li>Email + SMS</li>
+          <li>Real-time GPS</li>
+          <li>Analytics</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary w-full block text-center" href="admin-signup.html?plan=pro">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="text-center mb-4">
+          <div class="text-4xl mb-2"></div>
+          <div class="text-2xl text-slate-100 font-bold">Advance</div>
+          <div class="text-4xl text-cyan-400 font-bold">£49.99<span class="text-lg text-slate-400">/mo</span></div>
+        </div>
+        <ul class="text-slate-300 text-sm space-y-2 mb-5">
+          <li>Up to 250 staff</li>
+          <li>Everything in Pro</li>
+          <li>Custom workflows</li>
+          <li>Incident management</li>
+          <li>White-label</li>
+        </ul>
+        <a class="btn btn-primary w-full block text-center" href="admin-signup.html?plan=advance">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="text-center mb-4">
+          <div class="text-4xl mb-2"></div>
+          <div class="text-2xl text-slate-100 font-bold">Enterprise</div>
+          <div class="text-3xl text-cyan-400 font-bold">Contact</div>
+        </div>
+        <ul class="text-slate-300 text-sm space-y-2 mb-5">
+          <li>Unlimited staff</li>
+          <li>Custom integrations</li>
+          <li>Dedicated AM</li>
+          <li>SLA guarantees</li>
+          <li>24/7 support</li>
+        </ul>
+        <a class="btn btn-primary w-full block text-center" href="mailto:sales@mmadtrack360.com">Contact Sales</a>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="index.html" class="text-slate-400 hover:text-cyan-400"> Back to Login</a>
+    </div>
+  </div>
+</body>
+</html>

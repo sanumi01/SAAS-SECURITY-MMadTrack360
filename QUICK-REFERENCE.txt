@@ -1,0 +1,35 @@
+﻿MMA TRACK 360 SECURITY - QUICK REFERENCE
+=========================================
+
+Project: SAAS For MMadTrack360-Security3
+Location: C:\Users\pryan\OneDrive\Desktop\SAAS PROJECTS\SAAS For MMadTrack360-Security3
+Setup Date: 2025-10-31 19:42:44
+
+COMMANDS
+--------
+.\install.ps1  - Install dependencies
+.\start.ps1    - Start servers
+.\stop.ps1     - Stop servers
+.\status.ps1   - Check status
+
+URLS
+----
+Frontend:  http://localhost:3000
+Backend:   http://localhost:3001
+Health:    http://localhost:3001/api/health
+Stats:     http://localhost:3001/api/dashboard/stats
+
+FOLDERS
+-------
+backend/   - API server
+frontend/  - Web application
+deploy/    - Deployment scripts
+test/      - Testing files
+docs/      - Documentation
+
+NEXT STEPS
+----------
+1. Run: .\install.ps1
+2. Run: .\start.ps1
+3. Open: http://localhost:3000
+

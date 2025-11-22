@@ -1,33 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Basic app defaults — let Tailwind handle most utilities */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial;
+  font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Primary Colors - Trust & Authority */
+  --primary-900: #0A2540; /* Deep navy - headers, primary text */
+  --primary-700: #0D3A5F; /* Dark blue - navigation */
+  --primary-500: #1E5A8E; /* Main brand color */
+  --primary-300: #4A90E2; /* Accents, links */
+  --primary-100: #E3F2FD; /* Light backgrounds */
+
+  /* Success - Safe/Secure States */
+  --success-700: #047857;
+  --success-500: #10B981;
+  --success-100: #D1FAE5;
+
+  /* Warning - Attention Needed */
+  --warning-700: #B45309;
+  --warning-500: #F59E0B;
+  --warning-100: #FEF3C7;
+
+  /* Error - Critical/Threats */
+  --error-700: #B91C1C;
+  --error-500: #EF4444;
+  --error-100: #FEE2E2;
+
+  /* Neutrals - UI Elements */
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+
+  /* Accent - Call to Action */
+  --accent-500: #7C3AED; /* Purple for CTAs */
+  --accent-100: #EDE9FE;
+
+  /* Legacy / compatibility tokens used across the app */
+  --primary-200: var(--primary-300);
+  --primary-700-alt: var(--primary-700);
+
+  /* Panels and surfaces tuned for the dark gradient background */
+  --panel-bg: rgba(255,255,255,0.04);
+  --panel-dark: #111827;
+  --chart-bg: rgba(30,60,114,0.06);
+  --sidebar-from: var(--primary-900);
+  --sidebar-to: var(--primary-700);
+  --gradient-from: var(--primary-900);
+  --gradient-to: var(--primary-500);
+
+  --sidebar-border-strong: rgba(255,255,255,0.06);
+  --sidebar-border-light: rgba(255,255,255,0.035);
+  --accent-glow: rgba(124,58,237,0.16); /* subtle purple glow for CTAs */
+  --surface-light: var(--gray-100);
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary-200);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-500);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* Use the app gradient as the default page background so pages match the admin dashboard */
+  background: linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+  background-attachment: fixed;
+  font-family: var(--font-sans);
+  color: rgba(255,255,255,0.95);
+}
+
+/* Panel background used across admin cards to increase contrast over the gradient */
+.panel-bg {
+  background-color: var(--panel-bg);
+  color: rgba(255,255,255,0.95); /* panels keep white text for readability */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Slightly more muted panels for interior small cards / stats */
+.panel-muted {
+  background-color: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.9);
+}
+
+/* Export button tuned for dark panels */
+.export-btn {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  color: white;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+}
+
+/* Avatar gradient using brand tokens */
+.avatar-gradient {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+}
+
+/* Sidebar helper classes to avoid inline styles in JSX */
+.sidebar-header-border {
+  border-color: var(--sidebar-border-strong);
+}
+
+/* Authentication / forms */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72vh;
+  padding: 24px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+}
+.auth-header {
+  text-align: left;
+  margin-bottom: 12px;
+}
+.auth-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.78);
+}
+.auth-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--white);
+  font-size: 0.95rem;
+}
+.auth-input:focus { outline: none; box-shadow: 0 0 0 4px rgba(30,90,142,0.08); border-color: var(--primary-500); }
+.auth-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; }
+.auth-btn { background: var(--primary-500); color: var(--white); padding: 0.72rem 1rem; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; }
+.auth-btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.9); }
+.form-row { margin-bottom: 12px; }
+.form-error { color: var(--error-500); font-size: 0.85rem; margin-top:6px; }
+.small-link { color: var(--primary-300); text-decoration: underline; cursor: pointer; font-size:0.9rem }
+
+@media (max-width: 520px) {
+  .auth-card { padding: 16px; border-radius: 10px; }
+  .auth-title { font-size: 1.05rem; }
+}
+
+.sidebar-bottom-border {
+  border-color: var(--sidebar-border-light);
+}
+
+.sidebar-scroll {
+  max-height: calc(100vh - 180px);
+}
+
+/* Sidebar background gradient and collapsed behavior */
+.sidebar-bg {
+  background: linear-gradient(180deg, var(--sidebar-from), var(--sidebar-to));
+  width: 280px;
+}
+
+/* Main content gradient so pages don't flash white on navigation */
+.app-main-bg {
+  background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+}
+
+.text-muted {
+  color: rgba(255,255,255,0.72);
+}
+
+/* Reserve space for the left sidebar on medium+ screens so it doesn't cover content */
+@media (min-width: 768px) {
+  body {
+    padding-left: 280px; /* matches sidebar width */
+  }
+  /* Ensure any fixed header spans full width minus sidebar */
+  header {
+    margin-left: 0;
+  }
 }
 
 h1 {
@@ -37,32 +214,55 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 0.5em 0.9em;
+  font-size: 0.95em;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: rgba(255,255,255,0.95);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.18s, border-color 0.18s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.06);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Sidebar interactive helpers (use these in JSX) */
+.sidebar-item-hover {
+  transition: background-color 0.12s, color 0.12s;
+}
+.sidebar-item-hover:hover {
+  background-color: rgba(255,255,255,0.02);
+}
+.sidebar-item-active {
+  background-color: var(--panel-bg);
+  color: var(--primary-500);
+  font-weight: 600;
+  border-left: 4px solid var(--primary-500);
+}
+
+/* Make dropdown child containers readable on the sidebar */
+.sidebar-children {
+  background-color: rgba(0,0,0,0.04);
+  padding: 0.3rem;
+  border-radius: 8px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--panel-dark);
+    background-color: var(--surface-light);
   }
   a:hover {
-    color: #747bff;
+    color: var(--primary-200);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--surface-light);
   }
 }
