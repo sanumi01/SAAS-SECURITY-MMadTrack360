@@ -305,6 +305,34 @@
       "passwordHash": "$2a$10$DYwdOsAHbDFUDgt//efXouv9AI8MgQWJ45OXpd8jxCp9d67j3szJm",
       "createdAt": 1763833839807,
       "lastLogin": null
+    },
+    {
+      "id": 22,
+      "staffId": "guardA.1763835083988@example.com",
+      "adminId": 1,
+      "email": "guardA.1763835083988@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$GF2nl3VeepeVBmZh592UqeyjW/1dM4.NM7cCC46d3gJxrQhAP3e02",
+      "createdAt": 1763835093463,
+      "lastLogin": 1763835093642
+    },
+    {
+      "id": 23,
+      "staffId": "guardB.1763835083988@example.com",
+      "adminId": null,
+      "email": "guardB.1763835083988@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$Kg759urgyiu1espbAoEBbevcvxGbXSd.XzzlVNgExiTxVrQ.WdPPC",
+      "createdAt": 1763835093848,
+      "lastLogin": null
     }
   ],
   "sessions": [
@@ -461,6 +489,20 @@
       "role": "staff",
       "expires": 1764438639620,
       "createdAt": 1763833839620
+    },
+    {
+      "token": "592d9933ff32084de7cb4fb14cca234e",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764439893243,
+      "createdAt": 1763835093243
+    },
+    {
+      "token": "0a49bba45fcbeb3d30c20f69af769198",
+      "ownerId": "guardA.1763835083988@example.com",
+      "role": "staff",
+      "expires": 1764439893646,
+      "createdAt": 1763835093646
     }
   ],
   "reset_tokens": [
@@ -1222,6 +1264,72 @@
       "ts": "2025-11-22T17:50:39.826Z",
       "action": "email.stub",
       "details": "{\"to\":\"guardB.1763833829293@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 126,
+      "ts": "2025-11-22T18:11:33.240Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 127,
+      "ts": "2025-11-22T18:11:33.243Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"592d99...\"}"
+    },
+    {
+      "id": 128,
+      "ts": "2025-11-22T18:11:33.464Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763835083988@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 129,
+      "ts": "2025-11-22T18:11:33.471Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 130,
+      "ts": "2025-11-22T18:11:33.478Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 131,
+      "ts": "2025-11-22T18:11:33.642Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763835083988@example.com\"}"
+    },
+    {
+      "id": 132,
+      "ts": "2025-11-22T18:11:33.646Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763835083988@example.com\",\"role\":\"staff\",\"token\":\"0a49bb...\"}"
+    },
+    {
+      "id": 133,
+      "ts": "2025-11-22T18:11:33.666Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763835083988@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 134,
+      "ts": "2025-11-22T18:11:33.848Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763835083988@example.com\",\"createdBy\":\"guardA.1763835083988@example.com\"}"
+    },
+    {
+      "id": 135,
+      "ts": "2025-11-22T18:11:33.850Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 136,
+      "ts": "2025-11-22T18:11:33.852Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
     }
   ],
   "subscription_tiers": [
@@ -1383,6 +1491,11 @@
     {
       "userType": "staff",
       "userId": "guardA.1763833829293@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763835083988@example.com",
       "roleId": 2
     }
   ]
