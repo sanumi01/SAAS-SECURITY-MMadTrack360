@@ -190,6 +190,28 @@ CREATE TABLE IF NOT EXISTS user_roles (
       });
     }, DEBOUNCE_MS);
   }
+  // periodic flush: optional regular flush to disk to reduce window
+  // of in-memory-only changes; set via DB_PERSIST_PERIODIC_FLUSH_MS (ms).
+  const PERIODIC_FLUSH_MS = Number(process.env.DB_PERSIST_PERIODIC_FLUSH_MS) || 0;
+  let _periodicFlushHandle = null;
+  function startPeriodicFlush() {
+    if (PERIODIC_FLUSH_MS > 0 && !_periodicFlushHandle) {
+      _periodicFlushHandle = setInterval(() => {
+        try {
+          // If there's a pending debounced write, flush immediately to ensure
+          // changes hit disk regularly. Otherwise, trigger a save which will
+          // schedule a debounced write.
+          if (pendingWrite) {
+            flushSync();
+          } else {
+            save();
+          }
+        } catch (e) {
+          console.error('[DB] periodic flush error', e);
+        }
+      }, PERIODIC_FLUSH_MS);
+    }
+  }
   function flushSync() {
     if (pendingWrite) { clearTimeout(pendingWrite); pendingWrite = null; }
     try { fs.writeFileSync(jsonDbPath, JSON.stringify(data, null, 2), 'utf8'); } catch (e) { console.error('[DB] flush error', e); }
@@ -200,6 +222,8 @@ CREATE TABLE IF NOT EXISTS user_roles (
     process.on('SIGINT', () => { flushSync(); process.exit(); });
     process.on('SIGTERM', () => { flushSync(); process.exit(); });
   } catch (e) { /* ignore if signals not supported in environment */ }
+  // start periodic flush if requested
+  try { startPeriodicFlush(); } catch (e) { /* ignore */ }
   db = {
     _json: data,
     db: null,
