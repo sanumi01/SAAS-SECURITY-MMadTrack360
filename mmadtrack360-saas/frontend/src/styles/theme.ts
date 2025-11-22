@@ -1,24 +1,24 @@
 export const theme = {
   colors: {
     background: {
-      primary: '#020617',      // slate-950
-      secondary: '#0f172a',    // slate-900
-      tertiary: '#1e293b',     // slate-800
+      primary: 'var(--gradient-from)',
+      secondary: 'var(--sidebar-from)',
+      tertiary: 'var(--panel-dark)',
     },
     text: {
-      primary: '#e2e8f0',      // slate-200
-      secondary: '#94a3b8',    // slate-400
-      tertiary: '#64748b',     // slate-500
+      primary: 'var(--primary-200)',
+      secondary: 'var(--primary-200)',
+      tertiary: 'rgba(255,255,255,0.72)',
     },
     brand: {
-      primary: '#2563eb',      // blue-600
-      hover: '#1d4ed8',        // blue-700
+      primary: 'var(--primary-500)',
+      hover: 'var(--primary-700)',
     },
     status: {
-      success: '#10b981',      // emerald-500
-      warning: '#f59e0b',      // amber-500
-      danger: '#e11d48',       // rose-600
-      info: '#3b82f6',         // blue-500
+      success: 'var(--success)',
+      warning: 'var(--warning)',
+      danger: 'var(--danger)',
+      info: 'var(--primary-500)',
     }
   },
   fontFamily: {

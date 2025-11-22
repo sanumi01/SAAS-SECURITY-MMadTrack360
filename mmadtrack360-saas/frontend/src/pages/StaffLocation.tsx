@@ -44,11 +44,11 @@ export default function StaffLocation() {
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={filteredEvents} margin={{ top: 20, right: 30, left: 0, bottom: 0 }} barCategoryGap={20}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="area" stroke="#60A5FA" />
-              <YAxis stroke="#60A5FA" />
-              <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#60A5FA', borderRadius: '8px', border: 'none' }} />
+              <XAxis dataKey="area" stroke="var(--primary-200)" />
+              <YAxis stroke="var(--primary-200)" />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--primary-200)', borderRadius: '8px', border: 'none' }} />
               <Legend />
-              <Bar dataKey="events" fill="#3B82F6" name="Events" isAnimationActive={true} />
+              <Bar dataKey="events" fill="var(--primary-500)" name="Events" isAnimationActive={true} />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-2 flex gap-2 flex-wrap">

@@ -100,12 +100,12 @@ export default function StaffAlert() {
             <ResponsiveContainer width="100%" height={220}>
               <ComposedChart data={alertTypes} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="type" stroke="#60A5FA" />
-                <YAxis stroke="#60A5FA" />
-                <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#EF4444', borderRadius: '8px', border: 'none' }} />
+                <XAxis dataKey="type" stroke="var(--primary-200)" />
+                <YAxis stroke="var(--primary-200)" />
+                <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--danger)', borderRadius: '8px', border: 'none' }} />
                 <Legend />
-                <Bar dataKey="count" fill="#3B82F6" name="Count" onClick={data => setFilter(data.type)} isAnimationActive={true} />
-                <Line type="monotone" dataKey="severity" stroke="#EF4444" name="Severity" />
+                <Bar dataKey="count" fill="var(--primary-500)" name="Count" onClick={data => setFilter(data.type)} isAnimationActive={true} />
+                <Line type="monotone" dataKey="severity" stroke="var(--danger)" name="Severity" />
               </ComposedChart>
             </ResponsiveContainer>
             <div className="mt-2 flex gap-2 flex-wrap">

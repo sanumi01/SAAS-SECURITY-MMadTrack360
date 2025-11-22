@@ -34,10 +34,10 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
   setToast('Login successful!')
   setTimeout(() => setToast(''), 2000)
   onLogin({ id: userId, role })
-      } catch (err) {
+    } catch {
   setError('Network error. Please try again later.')
   setToast('Network error!')
-      }
+    }
     } else {
       // Staff login: just pass to parent (replace with real API in production)
   setToast('Login successful!')

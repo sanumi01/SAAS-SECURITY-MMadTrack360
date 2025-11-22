@@ -1,0 +1,130 @@
+{
+  "name": "MMadTrack360 Security",
+  "short_name": "MMadTrack360",
+  "description": "Professional security staff tracking and management platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#086ADD",
+  "theme_color": "#086ADD",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-GB",
+  "categories": ["business", "productivity", "security"],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Emergency Alert",
+      "short_name": "Emergency",
+      "description": "Send emergency alert immediately",
+      "url": "/emergency",
+      "icons": [
+        {
+          "src": "/icons/emergency-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Check In",
+      "short_name": "Check In",
+      "description": "Quick staff check-in",
+      "url": "/checkin",
+      "icons": [
+        {
+          "src": "/icons/checkin-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Live Map",
+      "short_name": "Map",
+      "description": "View live staff locations",
+      "url": "/map",
+      "icons": [
+        {
+          "src": "/icons/map-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Dashboard view on desktop"
+    },
+    {
+      "src": "/screenshots/mobile-dashboard.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Dashboard view on mobile"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://track.mamaadsolution.com/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}

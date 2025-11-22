@@ -1,15 +1,18 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserIcon, ShieldCheckIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import { ShieldCheckIcon } from '@heroicons/react/24/solid';
 
-function Login({ onLogin }) {
-  const [darkMode, setDarkMode] = React.useState(true);
+function Login() {
   const navigate = useNavigate();
-    const [showSignup, setShowSignup] = React.useState(false);
-    const [signupSuccess, setSignupSuccess] = React.useState(false);
-    const [signupForm, setSignupForm] = React.useState({ name: '', email: '', password: '' });
-    const [loading, setLoading] = React.useState(false);
+  const [showSignup, setShowSignup] = React.useState(false);
+  const [signupSuccess, setSignupSuccess] = React.useState(false);
+  const [signupForm, setSignupForm] = React.useState({ name: '', email: '', password: '' });
+  const [loading, setLoading] = React.useState(false);
+  // New login form state
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [role, setRole] = React.useState('admin'); // default selection
 
   const handleSignupChange = (e) => {
     const { name, value } = e.target;
@@ -32,116 +35,87 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: darkMode
-        ? 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)'
-        : 'linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: darkMode ? '#fff' : '#222',
-      fontFamily: 'Segoe UI, sans-serif',
-      padding: '0 16px',
-      transition: 'background 0.5s',
-    }}>
+  <div className="app-main-bg min-h-screen flex items-center justify-center text-white px-4" style={{ fontFamily: 'Segoe UI, sans-serif' }}>
       {/* MMadTrack360 Logo */}
       {/* Theme Toggle */}
-      <button
-        aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-        style={{
-          position: 'absolute',
-          top: 24,
-          right: 32,
-          background: darkMode ? '#fff' : '#2563eb',
-          color: darkMode ? '#2563eb' : '#fff',
-          border: 'none',
-          borderRadius: 20,
-          padding: '8px 18px',
-          fontWeight: 600,
-          fontSize: 15,
-          boxShadow: '0 2px 8px #1e3c72',
-          cursor: 'pointer',
-          zIndex: 1000,
-          transition: 'background 0.2s, color 0.2s',
-        }}
-        onClick={() => setDarkMode((prev) => !prev)}
-      >
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
-      </button>
-      <div style={{ marginBottom: 24, animation: 'fadeInDown 0.8s' }}>
-        <img src="/MMAD_App_logo.jpeg" alt="MMadTrack360 Logo" style={{ width: 120, marginBottom: 8, filter: 'drop-shadow(0 2px 8px #2563eb)' }} />
-        <h1 style={{ fontWeight: 700, fontSize: 32, marginBottom: 8, letterSpacing: 1, textShadow: '0 2px 8px #1e3c72' }}>MMadTrack360 SaaS Platform</h1>
+      {/* Theme toggle removed for single-color brand */}
+      <div style={{ marginBottom: 18, animation: 'fadeInDown 0.8s', textAlign: 'center' }}>
+        <img src="/MMAD_App_logo.jpeg" alt="MMadTrack360 Logo" className="w-28 mx-auto mb-2" />
+        <h1 className="font-extrabold text-2xl mb-1" style={{ letterSpacing: 0.6, textShadow: '0 2px 6px var(--primary-700)' }}>MMadTrack360</h1>
+        <div className="text-sm text-[var(--primary-200)]">SaaS Security Platform</div>
       </div>
-      <div style={{
-        background: 'rgba(255,255,255,0.10)',
-        borderRadius: 16,
-        boxShadow: '0 4px 24px rgba(30,60,114,0.18)',
-        padding: '32px 24px',
-        minWidth: 320,
-        maxWidth: 400,
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        animation: 'fadeInUp 1s',
-      }}>
-        <h2 style={{ fontWeight: 600, fontSize: 24, marginBottom: 24 }}>Login</h2>
-        <button className="login-btn admin" onClick={() => navigate('/admin-dashboard')}>
-          <ShieldCheckIcon style={{ width: 24, height: 24 }} /> Admin Login
-        </button>
-        <button className="login-btn staff" onClick={() => navigate('/staff-dashboard')}>
-          <UserIcon style={{ width: 24, height: 24 }} /> Staff Login
-        </button>
-        <button className="login-btn signup" onClick={() => setShowSignup(true)}>
-          <UserPlusIcon style={{ width: 24, height: 24 }} /> Admin Signup
-        </button>
-          {/* Social Login Buttons - Accessibility Enhanced */}
-          <div style={{ marginTop: 18, width: '100%', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <button className="login-btn social google" aria-label="Login with Google" onClick={() => alert('Google login coming soon!')}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google" style={{ width: 22, height: 22, marginRight: 8 }} aria-hidden="true" />
-              <span aria-label="Login with Google">Login with Google</span>
-            </button>
-            <button className="login-btn social microsoft" aria-label="Login with Microsoft" onClick={() => alert('Microsoft login coming soon!')}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style={{ width: 22, height: 22, marginRight: 8 }} aria-hidden="true" />
-              <span aria-label="Login with Microsoft">Login with Microsoft</span>
-            </button>
+
+      <div className="panel-bg rounded-2xl p-6 shadow-lg w-full max-w-[420px] animate-fadeInUp">
+        <h2 className="text-lg font-semibold mb-2">Sign in</h2>
+        <p className="text-muted mb-4 text-sm" style={{ textAlign: 'center' }}>Sign in to continue to your MMadTrack360 dashboard.</p>
+
+        <form style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 12 }} onSubmit={(e) => {
+          e.preventDefault();
+          // demo auth flow
+          localStorage.setItem('isAuthenticated', 'true');
+          if (role === 'admin') navigate('/admin'); else navigate('/admin/staff');
+        }}>
+          <label className="sr-only">Role</label>
+          <div style={{ position: 'relative' }}>
+            <select aria-label="Select role" value={role} onChange={(e) => setRole(e.target.value)} className="p-3 rounded bg-white/6 border border-white/10 text-white w-full role-select">
+              <option value="admin">Admin</option>
+              <option value="staff">Staff</option>
+            </select>
+            {/* arrow */}
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: 'var(--primary-200)' }} xmlns="http://www.w3.org/2000/svg"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
+
+          <input type="email" name="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="p-3 rounded bg-white/6 border border-white/10 text-white" required />
+          <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="p-3 rounded bg-white/6 border border-white/10 text-white" required />
+
+          <button type="submit" className="login-btn admin justify-center">
+            <ShieldCheckIcon style={{ width: 18, height: 18 }} />
+            <span>{role === 'admin' ? 'Sign in as Admin' : 'Sign in as Staff'}</span>
+          </button>
+        </form>
+
+        <div className="flex items-center justify-between mt-3">
+          <a href="#" className="text-[var(--primary-200)] text-sm">Forgot password?</a>
+          <button className="text-sm text-[var(--primary-200)] bg-transparent border-none" onClick={() => setShowSignup(true)}>Create account</button>
+        </div>
+
+        {/* Social Login - optional, kept minimal */}
+        <div style={{ marginTop: 14 }}>
+          <button className="login-btn social google w-full" aria-label="Login with Google" onClick={() => alert('Google login coming soon!')}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google" style={{ width: 18, height: 18, marginRight: 8 }} aria-hidden="true" />
+            <span>Continue with Google</span>
+          </button>
+        </div>
       </div>
-      <div style={{ marginTop: 32, color: '#cbd5e1', fontSize: 16, textAlign: 'center', maxWidth: 400, animation: 'fadeIn 1.2s' }}>
-        <p>Login as <b>Admin</b> or <b>Staff</b> to access your full-featured dashboard.<br />Signup to create a new admin account.</p>
+      <div className="mt-6 text-center text-muted max-w-md" style={{ animation: 'fadeIn 1.2s' }}>
+        <p className="text-sm">Login as <b>Admin</b> or <b>Staff</b> to access your dashboard. Need an account? <button className="text-[var(--primary-200)] underline" onClick={() => setShowSignup(true)}>Create one</button>.</p>
       </div>
       {/* Admin Signup Modal */}
       {showSignup && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(30,60,114,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, animation: 'fadeIn 0.5s' }}>
-          <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(30,60,114,0.25)', padding: '40px 32px', minWidth: 340, maxWidth: 400, width: '100%', color: '#222', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', animation: 'fadeInUp 0.8s' }}>
-            <button style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', fontSize: 22, color: '#1e3c72', cursor: 'pointer', transition: 'color 0.2s' }} onClick={() => setShowSignup(false)}>&times;</button>
-            <h2 style={{ fontWeight: 700, fontSize: 26, marginBottom: 18, color: '#1e3c72' }}>Admin Signup</h2>
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
+          <div className="panel-bg rounded-2xl p-6 shadow-lg w-full max-w-md relative">
+            <button className="absolute top-4 right-4 text-white text-2xl" onClick={() => setShowSignup(false)} aria-label="Close">&times;</button>
+            <h2 className="text-xl font-bold mb-4 text-white">Create account</h2>
             {loading ? (
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '32px 0' }}>
-                <div className="spinner" style={{ width: 48, height: 48, border: '6px solid #2563eb', borderTop: '6px solid #f59e42', borderRadius: '50%', animation: 'spin 1s linear infinite', marginBottom: 16 }}></div>
-                <span style={{ color: '#2563eb', fontWeight: 600, fontSize: 18 }}>Processing...</span>
-              </div>
-            ) : signupSuccess ? (
-              <div style={{ color: '#10b981', fontWeight: 600, fontSize: 18, margin: '32px 0', animation: 'fadeIn 0.5s' }}>
-                Signup successful! Welcome, {signupForm.name || 'Admin'}.
-              </div>
-            ) : (
-              <form style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 18 }} onSubmit={handleSignupSubmit}>
-                <input type="text" name="name" placeholder="Full Name" value={signupForm.name} onChange={handleSignupChange} style={{ padding: '12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 16, marginBottom: 8, transition: 'border 0.2s' }} required />
-                <input type="email" name="email" placeholder="Email Address" value={signupForm.email} onChange={handleSignupChange} style={{ padding: '12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 16, marginBottom: 8, transition: 'border 0.2s' }} required />
-                <input type="password" name="password" placeholder="Password" value={signupForm.password} onChange={handleSignupChange} style={{ padding: '12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 16, marginBottom: 8, transition: 'border 0.2s' }} required />
-                <button type="submit" className="login-btn admin" style={{ marginTop: 8 }}>Signup</button>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '32px 0' }}>
+                          <div className="spinner" style={{ width: 48, height: 48, border: '6px solid var(--primary-200)', borderTop: '6px solid var(--primary-500)', borderRadius: '50%', animation: 'spin 1s linear infinite', marginBottom: 16 }}></div>
+                          <span className="text-white font-semibold">Processing...</span>
+                        </div>
+                ) : signupSuccess ? (
+                  <div className="mb-8 text-[var(--success)] font-semibold text-lg animate-fadeIn">Signup successful! Welcome, {signupForm.name || 'User'}.</div>
+                ) : (
+                  <form style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 12 }} onSubmit={handleSignupSubmit}>
+                <input type="text" name="name" placeholder="Full Name" value={signupForm.name} onChange={handleSignupChange} className="p-3 rounded bg-white/6 border border-white/10 text-white" required />
+                <input type="email" name="email" placeholder="Email Address" value={signupForm.email} onChange={handleSignupChange} className="p-3 rounded bg-white/6 border border-white/10 text-white" required />
+                <input type="password" name="password" placeholder="Password" value={signupForm.password} onChange={handleSignupChange} className="p-3 rounded bg-white/6 border border-white/10 text-white" required />
+                <button type="submit" className="login-btn admin mt-2">Create account</button>
                 {/* Error message for demo purposes */}
                 {signupForm.email && !signupForm.email.includes('@') && (
-                  <div style={{ color: '#f59e42', fontWeight: 500, fontSize: 15, marginTop: 8 }}>
-                    Please enter a valid email address.
-                  </div>
+                  <div className="mt-2 text-[var(--warning)] font-medium">Please enter a valid email address.</div>
                 )}
               </form>
             )}
-            <div style={{ marginTop: 18, color: '#1e3c72', fontSize: 15, textAlign: 'center', animation: 'fadeIn 0.5s' }}>
+            <div className="mt-4 text-center text-muted" style={{ animation: 'fadeIn 0.5s' }}>
               {signupSuccess ? 'Redirecting to dashboard...' : 'All admin features will be available after signup.'}
             </div>
           </div>
@@ -168,23 +142,23 @@ function Login({ onLogin }) {
           font-weight: 500;
           border-radius: 8px;
           border: none;
-          box-shadow: 0 2px 8px #1e3c72;
+          box-shadow: 0 6px 28px var(--accent-glow);
           cursor: pointer;
           display: flex;
           align-items: center;
           gap: 10px;
           transition: background 0.2s, transform 0.2s;
         }
-        .login-btn.admin { background: #2563eb; color: #fff; }
-        .login-btn.staff { background: #10b981; color: #fff; }
-        .login-btn.signup { background: #f59e42; color: #fff; }
+  .login-btn.admin { background: var(--primary-500); color: #fff; }
+  .login-btn.staff { background: var(--primary-500); color: #fff; }
+  .login-btn.signup { background: var(--primary-500); color: #fff; }
         .login-btn:hover {
           transform: scale(1.04);
           filter: brightness(1.1);
         }
           .spinner {
-            border: 6px solid #2563eb;
-            border-top: 6px solid #f59e42;
+            border: 6px solid var(--primary-200);
+            border-top: 6px solid var(--primary-500);
             border-radius: 50%;
             width: 48px;
             height: 48px;
@@ -203,9 +177,9 @@ function Login({ onLogin }) {
         }
       `}</style>
       {/* Browser Debugging Tips */}
-      <div style={{ marginTop: 24, color: '#f59e42', fontSize: 15, textAlign: 'center', maxWidth: 400 }}>
+      <div className="mt-6 text-center text-yellow-400 max-w-md">
         <b>Browser Debugging:</b> If you see a blank page, open your browser's DevTools (press <kbd>F12</kbd> or <kbd>Ctrl+Shift+I</kbd>) and check the Console for errors. <br />
-        <a href="#" style={{ color: '#2563eb', textDecoration: 'underline' }} onClick={() => { window.open('about:blank', '_blank'); alert('Press F12 or Ctrl+Shift+I in the new tab to open DevTools.'); }}>Open DevTools Help</a>
+        <a href="#" className="text-[var(--primary-200)] underline" onClick={() => { window.open('about:blank', '_blank'); alert('Press F12 or Ctrl+Shift+I in the new tab to open DevTools.'); }}>Open DevTools Help</a>
       </div>
     </div>
   );

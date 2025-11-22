@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMadTrack360  Enterprise Security</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="container row" style="justify-content:space-between">
+      <div class="brand">
+        <div class="brand-logo">M</div>
+        <div>
+          <div style="font-weight:800;color:var(--cyan);">MMadTrack360</div>
+          <div class="muted">Security Platform</div>
+        </div>
+      </div>
+      <div class="actions">
+        <a href="pricing.html" class="btn btn-ghost">Pricing</a>
+        <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero / Forms -->
+  <div class="container" style="padding-top:32px;">
+    <div class="grid grid-2">
+      <!-- Left: headline + KPIs -->
+      <div>
+        <h1 style="font-size:42px;line-height:1.15;margin:0 0 10px 0;">
+          Enterprise security management that <span style="color:var(--cyan)">works</span>.
+        </h1>
+        <p class="muted" style="max-width:650px">
+          Staff scheduling, live tracking, communication, analytics and subscriptions, built for professional security teams.
+        </p>
+        <div class="grid grid-4" style="margin-top:18px">
+          <div class="stat"><div class="muted">Total Staff</div><div class="kpi">147</div></div>
+          <div class="stat"><div class="muted">Active Now</div><div class="kpi" style="color:var(--green)">89</div></div>
+          <div class="stat"><div class="muted">Incidents (wk)</div><div class="kpi" style="color:var(--amber)">23</div></div>
+          <div class="stat"><div class="muted">Response</div><div class="kpi">2.4m</div></div>
+        </div>
+      </div>
+
+      <!-- Right: Auth blocks -->
+      <div class="grid grid-2">
+        <!-- Admin block -->
+        <div class="card">
+          <div class="row" style="justify-content:space-between">
+            <div style="font-weight:800"> Admin</div>
+            <a class="link" href="pricing.html">See Plans</a>
+          </div>
+          <div class="tabs" id="adminTabs">
+            <div class="tab active" data-tab="signin" onclick="activateTab('#adminTabs','signin')">Sign in</div>
+            <div class="tab" data-tab="signup" onclick="activateTab('#adminTabs','signup')">Sign up</div>
+          </div>
+
+          <!-- Admin Sign in -->
+          <div data-panel="signin" style="display:block">
+            <form id="adminSignInForm" class="grid">
+              <div><label class="label">Email</label><input id="adminEmail" type="email" class="input" placeholder="admin@demo.com" required></div>
+              <div><label class="label">Password</label><input id="adminPassword" type="password" class="input" placeholder="admin123" required></div>
+              <div class="actions">
+                <button class="btn btn-primary" type="submit">Sign in</button>
+                <a href="reset-password.html" class="link">Forgot password?</a>
+              </div>
+              <div class="muted" style="font-size:12px">Demo: admin@demo.com / admin123</div>
+            </form>
+          </div>
+
+          <!-- Admin Sign up -->
+          <div data-panel="signup" style="display:none">
+            <form id="adminSignUpForm" class="grid">
+              <div class="grid grid-2">
+                <div><label class="label">First name</label><input id="suFirstName" class="input" required></div>
+                <div><label class="label">Last name</label><input id="suLastName" class="input" required></div>
+              </div>
+              <div><label class="label">Company</label><input id="suCompany" class="input" required></div>
+              <div class="grid grid-2">
+                <div><label class="label">Email</label><input id="suEmail" type="email" class="input" required></div>
+                <div><label class="label">Phone</label><input id="suPhone" class="input" required></div>
+              </div>
+              <div class="grid grid-2">
+                <div><label class="label">Password</label><input id="suPassword" type="password" minlength="8" class="input" required></div>
+                <div><label class="label">Confirm password</label><input id="suPassword2" type="password" class="input" required></div>
+              </div>
+              <label class="row muted" style="font-size:12px">
+                <input id="suConsent" type="checkbox" required> I agree to receive email/SMS and accept Terms & Privacy.
+              </label>
+              <button class="btn btn-primary" type="submit">Create account & start 14day Basic trial</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Staff Sign in block -->
+        <div class="card">
+          <div style="font-weight:800;margin-bottom:6px"> Staff</div>
+          <form id="staffSignInForm" class="grid">
+            <div><label class="label">Email</label><input id="staffEmail" type="email" class="input" placeholder="staff@demo.com" required></div>
+            <div><label class="label">Password</label><input id="staffPassword" type="password" class="input" placeholder="staff123" required></div>
+            <div class="actions">
+              <button class="btn btn-secondary" type="submit">Sign in</button>
+              <a href="index.html" class="link">Need admin access?</a>
+            </div>
+            <div class="muted" style="font-size:12px">Demo: staff@demo.com / staff123</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script src="notifications-config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('adminSignInForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      adminLogin(document.getElementById('adminEmail').value, document.getElementById('adminPassword').value);
+    });
+
+    document.getElementById('adminSignUpForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const pw = document.getElementById('suPassword').value;
+      const pw2 = document.getElementById('suPassword2').value;
+      if(pw !== pw2){ alert('Passwords do not match'); return; }
+      const payload = {
+        firstName: document.getElementById('suFirstName').value,
+        lastName: document.getElementById('suLastName').value,
+        email: document.getElementById('suEmail').value,
+        phone: document.getElementById('suPhone').value,
+        password: pw
+      };
+      adminSignup(payload);
+    });
+
+    document.getElementById('staffSignInForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('staffEmail').value;
+      const pw = document.getElementById('staffPassword').value;
+      if(email==='staff@demo.com' && pw==='staff123'){
+        Auth.login('staff',{name:'Staff Member', email});
+        alert(' Welcome!');
+        location.href='staff-dashboard.html';
+      } else {
+        alert(' Invalid credentials. Use staff@demo.com / staff123');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Staff Dashboard - MMadTrack360</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI Emoji", "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    .sidebar {
+      width: 220px;
+      background: #1a252f;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 15px 0;
+      cursor: pointer;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #00c6ff;
+    }
+    .hidden {
+      display: none;
+    }
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #00c6ff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>MMadTrack360 Staff</h2>
+    <a onclick="loadSection('dashboard')">🏠 Dashboard</a>
+    <a onclick="loadSection('qr')">📱 QR Scanner</a>
+    <a onclick="loadSection('alerts')">🚨 Alerts</a>
+    <a onclick="loadSection('tracking')">🗺️ Live Tracking</a>
+    <a onclick="loadSection('chat')">💬 Communication Hub</a>
+    <a href="index.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <div id="loader" class="loader hidden"></div>
+
+    <div id="dashboard" class="card">
+      <h3>Welcome, Staff Member</h3>
+      <p>This dashboard shows your current status, performance, and alerts.</p>
+    </div>
+
+    <div id="qr" class="card hidden">
+      <h3>📱 QR Scanner</h3>
+      <p>Scan staff IDs or location tags to confirm check-in.</p>
+    </div>
+
+    <div id="alerts" class="card hidden">
+      <h3>🚨 Alerts</h3>
+      <p>View and acknowledge active alerts assigned to you.</p>
+    </div>
+
+    <div id="tracking" class="card hidden">
+      <h3>🗺️ Live Tracking</h3>
+      <p>Monitor your current location and assigned zones.</p>
+    </div>
+
+    <div id="chat" class="card hidden">
+      <h3>💬 Communication Hub</h3>
+      <p>Chat with team members and receive updates from admin.</p>
+    </div>
+  </div>
+
+  <script>
+    function loadSection(id) {
+      document.querySelectorAll('.card').forEach(el => el.classList.add('hidden'));
+      document.getElementById('loader').classList.remove('hidden');
+
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById(id).classList.remove('hidden');
+      }, 600);
+    }
+  </script>
+</body>
+</html>

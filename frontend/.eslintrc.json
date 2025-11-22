@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2021": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "jsx-a11y"],
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "react": { "version": "detect" }
+  }
+}

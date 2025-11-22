@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Signup - MMadTrack360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg,#0f172a,#1e293b); font-family: Segoe UI, Tahoma, Verdana, sans-serif; }
+    .card { background: #1e293bf2; border: 1px solid #334155; border-radius: 20px; padding: 40px; }
+    .form-input, .form-select { width: 100%; padding: 14px 16px; background: #0f172a; border: 2px solid #334155; border-radius: 10px; color: #e2e8f0; }
+    .btn { padding: 14px 28px; border-radius: 10px; font-weight: 700; border: none; }
+    .btn-primary { background: linear-gradient(135deg,#06b6d4,#3b82f6); color: #fff; }
+  </style>
+</head>
+<body class="min-h-screen p-6 flex items-center justify-center">
+  <div class="max-w-2xl w-full">
+    <div class="card">
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-3"></div>
+        <h1 class="text-3xl font-bold text-cyan-400">Create Admin Account</h1>
+        <p class="text-slate-400">Basic plan has 14day free trial. You can upgrade later.</p>
+        <div id="planNote" class="text-sm text-yellow-400 mt-2"></div>
+      </div>
+      <form id="signupForm">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="text-sm text-slate-300">First Name</label>
+            <input id="firstName" class="form-input" required>
+          </div>
+          <div>
+            <label class="text-sm text-slate-300">Last Name</label>
+            <input id="lastName" class="form-input" required>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="text-sm text-slate-300">Company</label>
+          <input id="companyName" class="form-input" required>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="text-sm text-slate-300">Email</label>
+            <input id="email" type="email" class="form-input" required>
+          </div>
+          <div>
+            <label class="text-sm text-slate-300">Phone</label>
+            <input id="phone" type="tel" class="form-input" required>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-sm text-slate-300">Password</label>
+            <input id="password" type="password" minlength="8" class="form-input" required>
+          </div>
+          <div>
+            <label class="text-sm text-slate-300">Confirm Password</label>
+            <input id="confirmPassword" type="password" class="form-input" required>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="text-sm text-slate-300">Plan</label>
+          <select id="planSelect" class="form-select">
+            <option value="basic">Basic (£14.99/mo)</option>
+            <option value="pro">Pro (£39.99/mo)</option>
+            <option value="advance">Advance (£49.99/mo)</option>
+            <option value="enterprise">Enterprise (Contact)</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label class="text-sm text-slate-500">
+            <input type="checkbox" id="consent" required>
+            I agree to receive email/SMS and accept Terms & Privacy.
+          </label>
+        </div>
+        <button class="btn btn-primary w-full"> Create Account & Start Trial</button>
+        <div class="text-center mt-4">
+          <a href="index.html" class="text-slate-400 hover:text-cyan-400 text-sm"> Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script src="notifications-config.js"></script>
+  <script>
+    var urlPlan = (new URLSearchParams(location.search)).get('plan') || 'basic';
+    document.getElementById('planSelect').value = urlPlan;
+    if (urlPlan !== 'basic') {
+      document.getElementById('planNote').textContent = 'Selected ' + urlPlan.toUpperCase() + '. We will start Basic trial now; upgrade later in Billing.';
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var pw = document.getElementById('password').value;
+      var cpw = document.getElementById('confirmPassword').value;
+      if (pw !== cpw) {
+        alert('Passwords do not match');
+        return;
+      }
+      var desired = document.getElementById('planSelect').value;
+      var user = {
+        name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        company: document.getElementById('companyName').value
+      };
+      Billing.startTrialBasic('GBP', desired === 'basic' ? null : desired);
+      Auth.login('admin', user);
+      sendEmail(user.email, 'welcome', { userName: user.name });
+      sendSMS(user.phone, 'welcome', {});
+      alert(' Account created! Basic 14-day trial activated.');
+      location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

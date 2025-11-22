@@ -26,7 +26,7 @@ export default function AnalyticsDashboard() {
     { name: 'Manager', value: 3 },
     { name: 'Team Lead', value: 4 },
   ];
-  const ROLE_COLORS = ['#3B82F6', '#10B981', '#F59E42', '#EF4444'];
+  const ROLE_COLORS = ['var(--primary-500)', 'var(--success)', 'var(--warning)', 'var(--danger)'];
 
   return (
     <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 min-h-screen flex">
@@ -68,12 +68,12 @@ export default function AnalyticsDashboard() {
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={activityData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" stroke="#60A5FA" />
-              <YAxis stroke="#60A5FA" />
-              <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#60A5FA', borderRadius: '8px', border: 'none' }} />
+              <XAxis dataKey="day" stroke="var(--primary-200)" />
+              <YAxis stroke="var(--primary-200)" />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--primary-200)', borderRadius: '8px', border: 'none' }} />
               <Legend />
-              <Line type="monotone" dataKey="staff" stroke="#3B82F6" name="Staff" />
-              <Line type="monotone" dataKey="alerts" stroke="#EF4444" name="Alerts" />
+              <Line type="monotone" dataKey="staff" stroke="var(--primary-500)" name="Staff" />
+              <Line type="monotone" dataKey="alerts" stroke="var(--danger)" name="Alerts" />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -86,7 +86,7 @@ export default function AnalyticsDashboard() {
                   <Cell key={`cell-${index}`} fill={ROLE_COLORS[index % ROLE_COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip contentStyle={{ backgroundColor: '#1E293B', color: '#10B981', borderRadius: '8px', border: 'none' }} />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--panel-dark)', color: 'var(--success)', borderRadius: '8px', border: 'none' }} />
               <Legend />
             </PieChart>
           </ResponsiveContainer>

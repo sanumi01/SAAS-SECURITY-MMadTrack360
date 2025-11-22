@@ -1,5 +1,6 @@
 // Playwright automation for MMadTrack360 platform preview
-const { chromium } = require('playwright');
+/* eslint-env node */
+import { chromium } from 'playwright';
 
 const baseUrl = 'http://localhost:5173';
 const routes = [

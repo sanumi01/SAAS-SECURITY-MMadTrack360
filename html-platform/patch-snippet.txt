@@ -1,0 +1,14 @@
+﻿case "profile":
+  return d.jsxs("div",{className:"p-6",children:[
+    d.jsx("h2",{className:"text-2xl font-bold text-white mb-6",children:"👤 Profile Settings"}),
+    d.jsx("div",{className:"bg-gray-800 border border-gray-700 rounded-lg p-6",children:
+      d.jsx("p",{className:"text-gray-300",children:"Name: System Administrator\nEmail: admin@mmadtrack360.com\nRole: Super Admin"})
+    })
+  ]});
+case "preferences":
+  return d.jsxs("div",{className:"p-6",children:[
+    d.jsx("h2",{className:"text-2xl font-bold text-white mb-6",children:"🔧 Preferences"}),
+    d.jsx("div",{className:"bg-gray-800 border border-gray-700 rounded-lg p-6",children:
+      d.jsx("p",{className:"text-gray-300",children:"Theme: Dark Mode\nNotifications: Enabled\nLanguage: English (UK)"})
+    })
+  ]});

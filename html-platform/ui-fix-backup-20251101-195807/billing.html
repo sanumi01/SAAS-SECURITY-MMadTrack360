@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing & Subscription - MMadTrack360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-cyan-400 mb-6">Subscription & Billing</h1>
+
+    <div id="status" class="bg-slate-800 border border-slate-700 rounded-xl p-6 mb-6"></div>
+
+    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 mb-6">
+      <h2 class="text-xl font-bold text-cyan-300 mb-4">Change Plan</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div>
+          <label class="text-sm text-slate-400">Plan</label>
+          <select id="plan" class="w-full p-2 rounded bg-slate-900 border border-slate-700">
+            <option value="basic">Basic (£14.99)</option>
+            <option value="pro">Pro (£39.99)</option>
+            <option value="advance">Advance (£49.99)</option>
+            <option value="enterprise">Enterprise (Contact)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-slate-400">Billing Period</label>
+          <select id="period" class="w-full p-2 rounded bg-slate-900 border border-slate-700">
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual (Save 15%)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-slate-400">Offer Code</label>
+          <div class="flex gap-2">
+            <input id="offer" class="flex-1 p-2 rounded bg-slate-900 border border-slate-700" placeholder="LAUNCH50 / ANNUAL20 / REFER100">
+            <button id="apply" class="px-4 py-2 rounded bg-blue-600">Apply</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 text-slate-300">Amount due now: <span id="amount" class="font-bold text-cyan-400">£0.00</span></div>
+      <div class="mt-4">
+        <button id="activate" class="px-5 py-3 rounded bg-green-600">Activate / Update Plan</button>
+        <a href="pricing.html" class="ml-3 text-slate-400 hover:text-cyan-400">View plans</a>
+      </div>
+    </div>
+
+    <a href="dashboard.html" class="text-slate-400 hover:text-cyan-400"> Back to Dashboard</a>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script>
+    if (!Auth.requireRole('admin')) throw new Error('Not admin');
+    if (!Billing.requireActiveOrTrial()) throw new Error('Inactive');
+
+    var status = document.getElementById('status');
+    var planSel = document.getElementById('plan');
+    var periodSel = document.getElementById('period');
+    var offerInp = document.getElementById('offer');
+    var amountEl = document.getElementById('amount');
+
+    function refresh() {
+      var sub = Billing.getSubscription();
+      var left = Billing.daysLeft();
+      var html = '';
+      if (!sub) html = 'No subscription found. <a class="text-cyan-400" href="pricing.html">Choose a plan</a>.';
+      else if (sub.status === 'trial') html = 'Trial active on <b>' + sub.plan.toUpperCase() + '</b>. Days left: <b>' + left + '</b>';
+      else if (sub.status === 'active') html = 'Active plan: <b>' + sub.plan.toUpperCase() + '</b>  Billing: <b>' + (sub.billingPeriod || 'monthly') + '</b>';
+      else html = 'Status: <b>' + sub.status + '</b>';
+      status.innerHTML = '<div>' + html + '</div>';
+      planSel.value = (sub && sub.plan) || 'basic';
+      periodSel.value = (sub && sub.billingPeriod) || 'monthly';
+      updateAmount();
+    }
+
+    function updateAmount() {
+      var amt = Billing.amountDue(planSel.value, periodSel.value);
+      amountEl.textContent = '£' + (amt || 0).toFixed(2);
+    }
+
+    document.getElementById('apply').onclick = function() {
+      var res = Billing.applyOffer(offerInp.value);
+      alert(res.message);
+      updateAmount();
+    };
+
+    document.getElementById('activate').onclick = function() {
+      Billing.activatePlan(planSel.value, periodSel.value);
+      alert(' Plan updated!');
+      location.reload();
+    };
+
+    planSel.onchange = updateAmount;
+    periodSel.onchange = updateAmount;
+    refresh();
+  </script>
+</body>
+</html>

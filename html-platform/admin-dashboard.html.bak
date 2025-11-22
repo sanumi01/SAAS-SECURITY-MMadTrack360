@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Welcome, Admin</h1>
+    <p>Manage staff accounts, view reports, and control platform settings.</p>
+    <ul>
+      <li><a href="create-staff.html">Create Staff Account</a></li>
+      <li><a href="view-reports.html">View Reports</a></li>
+      <li><a href="settings.html">Platform Settings</a></li>
+    </ul>
+  </div>
+</body>
+</html>

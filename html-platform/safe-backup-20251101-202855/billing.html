@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing  MMadTrack360</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row" style="justify-content:space-between">
+      <h1>Subscriptions</h1>
+      <a href="dashboard.html" class="btn btn-ghost"> Back</a>
+    </div>
+
+    <div id="status" class="card" style="margin-top:16px"></div>
+
+    <div class="card" style="margin-top:16px">
+      <div style="font-weight:800;margin-bottom:8px">Manage plan</div>
+      <div class="grid grid-3">
+        <div>
+          <label class="label">Plan</label>
+          <select id="plan" class="select">
+            <option value="basic">Basic (£14.99)</option>
+            <option value="pro">Pro (£39.99)</option>
+            <option value="advance">Advance (£49.99)</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Period</label>
+          <select id="period" class="select">
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual (Save 15%)</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Offer Code</label>
+          <input id="offer" class="input" placeholder="LAUNCH50 / ANNUAL20 / REFER100">
+        </div>
+      </div>
+
+      <div class="row" style="justify-content:space-between;margin-top:12px">
+        <div class="muted">Amount due now: <b id="amount">£0.00</b></div>
+        <div class="actions">
+          <button id="apply" class="btn btn-ghost">Apply Offer</button>
+          <button id="activate" class="btn btn-primary">Activate / Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="billing.js"></script>
+  <script>
+    if (!Auth.requireRole('admin')) throw new Error('Not admin');
+    if (!Billing.requireActiveOrTrial()) throw new Error('Inactive');
+
+    const status = document.getElementById('status');
+    const planSel = document.getElementById('plan');
+    const periodSel = document.getElementById('period');
+    const offerInp = document.getElementById('offer');
+    const amountEl = document.getElementById('amount');
+
+    function refresh(){
+      const sub = Billing.getSubscription();
+      const left = Billing.daysLeft();
+      let html='';
+      if (!sub) html = 'No subscription found. <a href="pricing.html" class="link">Choose a plan</a>.';
+      else if (sub.status==='trial') html = 'Trial active on <b>'+sub.plan.toUpperCase()+'</b>. Days left: <b>'+left+'</b>';
+      else html = 'Active plan: <b>'+sub.plan.toUpperCase()+'</b>  Billing: <b>'+(sub.billingPeriod||'monthly')+'</b>';
+      status.innerHTML = html;
+      planSel.value = sub?.plan || 'basic';
+      periodSel.value = sub?.billingPeriod || 'monthly';
+      updateAmount();
+    }
+
+    function updateAmount(){
+      const amt = Billing.amountDue(planSel.value, periodSel.value);
+      amountEl.textContent = '£' + (amt||0).toFixed(2);
+    }
+
+    document.getElementById('apply').onclick = function(){
+      const res = Billing.applyOffer(offerInp.value);
+      alert(res.message);
+      updateAmount();
+    };
+
+    document.getElementById('activate').onclick = function(){
+      Billing.activatePlan(planSel.value, periodSel.value);
+      alert(' Plan updated');
+      location.reload();
+    };
+
+    planSel.onchange = updateAmount;
+    periodSel.onchange = updateAmount;
+    refresh();
+  </script>
+</body>
+</html>
