@@ -29,3 +29,8 @@ jobs:
         env:
           DEV_RETURN_RESET_TOKEN: '1'
         run: npm test
+      - name: Run tests (RBAC CLI) with periodic flush
+        env:
+          DEV_RETURN_RESET_TOKEN: '1'
+          DB_PERSIST_PERIODIC_FLUSH_MS: '5000'
+        run: npm test

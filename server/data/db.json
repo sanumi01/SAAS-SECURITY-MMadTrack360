@@ -120,9 +120,9 @@
       "phone": null,
       "role": "Guard",
       "status": "Active",
-      "passwordHash": "$2a$10$DMLnODd9lpe2w6yBPbKY8.IwJcVLPsgkMFymtVm5ebaqaA94xgx8i",
+      "passwordHash": "$2a$10$cDUCfa3fZGkChL9XIUrB1ejzB.PCj0v.Erm9l7rTBqtpWu78NG946",
       "createdAt": 1763765599014,
-      "lastLogin": 1763765599370
+      "lastLogin": 1763822388280
     },
     {
       "id": 9,
@@ -136,6 +136,202 @@
       "status": "Active",
       "passwordHash": "$2a$10$QO1RaRsEylB5dACzvBzTMeoAU.imUw60GMMQlG0cBhWtHU2IbEa1m",
       "createdAt": 1763765599808,
+      "lastLogin": null
+    },
+    {
+      "id": 10,
+      "staffId": "guard2@example.com",
+      "adminId": null,
+      "email": null,
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$wAGJgLD3Xpe9aMCm9nh.3OdWQyOskFsWpKyppVr.MmxvTwGqFqs.a",
+      "createdAt": 1763822388619,
+      "lastLogin": null
+    },
+    {
+      "id": 11,
+      "staffId": "guardA.1763822434350@example.com",
+      "adminId": 1,
+      "email": "guardA.1763822434350@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$90t7JglNY7K.vBk8q65WgOLs5onq6MrlkxazgXYJTSq.xI/fl/LcO",
+      "createdAt": 1763822435071,
+      "lastLogin": null
+    },
+    {
+      "id": 12,
+      "staffId": "guardA.1763822548831@example.com",
+      "adminId": 1,
+      "email": "guardA.1763822548831@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$ZiWQ7P0qhXFTuAughKHuPeETnXY5TCtfR6xlCATl2QE3/YvNB8gZq",
+      "createdAt": 1763822549627,
+      "lastLogin": null
+    },
+    {
+      "id": 13,
+      "staffId": "guardA.1763822905947@example.com",
+      "adminId": 1,
+      "email": "guardA.1763822905947@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$htrBsG5TP9.3iAcd47WLSOvlV90AkXTSLiZUpjGMkm3JoxFwpyKuS",
+      "createdAt": 1763822907505,
+      "lastLogin": 1763822908274
+    },
+    {
+      "id": 14,
+      "staffId": "guardB.1763822905947@example.com",
+      "adminId": null,
+      "email": "guardB.1763822905947@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$5jaEUlQ.s4iL3wQRp5HQGeyKFhoxCB01Y9Mcs9UYSvUkdAJASLvU6",
+      "createdAt": 1763822909026,
+      "lastLogin": null
+    },
+    {
+      "id": 15,
+      "staffId": "guardA.1763827137303@example.com",
+      "adminId": 1,
+      "email": "guardA.1763827137303@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$06$PfOp4zQ1EPpV4G1jT5rGkugQMu30AaygMA7LBJhYHltxNHnZQN4dy",
+      "createdAt": 1763827138494,
+      "lastLogin": 1763827138621
+    },
+    {
+      "id": 16,
+      "staffId": "guardA.1763827853536@example.com",
+      "adminId": 1,
+      "email": "guardA.1763827853536@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$qOR6MfkxuTa8an3HbPkWqeqvRk6NMCZy7Tjr1h54TVKOafU1.mAbe",
+      "createdAt": 1763827854136,
+      "lastLogin": 1763827854428
+    },
+    {
+      "id": 17,
+      "staffId": "guardB.1763827853536@example.com",
+      "adminId": null,
+      "email": "guardB.1763827853536@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$lkywO5Ze.RxiCD/t.KXyGeoe9H4X7mUCK4XfiTrgFRC9rk9wk86Ye",
+      "createdAt": 1763827854819,
+      "lastLogin": null
+    },
+    {
+      "id": 18,
+      "staffId": "guardA.1763828578102@example.com",
+      "adminId": 1,
+      "email": "guardA.1763828578102@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$dFTfhpoQtEMPGSxK8uQs7u4.1PUFmMOyHvnjVN3plRBsEX.RaxyGC",
+      "createdAt": 1763828580824,
+      "lastLogin": 1763828581041
+    },
+    {
+      "id": 19,
+      "staffId": "guardB.1763828578102@example.com",
+      "adminId": null,
+      "email": "guardB.1763828578102@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$OgA03HpOy73GCnB3Phs...m3LlkDACw1q2lMtVhh6LcqR2TJsElFm",
+      "createdAt": 1763828581251,
+      "lastLogin": null
+    },
+    {
+      "id": 20,
+      "staffId": "guardA.1763833829293@example.com",
+      "adminId": 1,
+      "email": "guardA.1763833829293@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$GdUo1ASpgARcTsrElGdl9.aObHN0ByBVoVHSbJpNIU93jKhl3LUXK",
+      "createdAt": 1763833839444,
+      "lastLogin": 1763833839617
+    },
+    {
+      "id": 21,
+      "staffId": "guardB.1763833829293@example.com",
+      "adminId": null,
+      "email": "guardB.1763833829293@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$DYwdOsAHbDFUDgt//efXouv9AI8MgQWJ45OXpd8jxCp9d67j3szJm",
+      "createdAt": 1763833839807,
+      "lastLogin": null
+    },
+    {
+      "id": 22,
+      "staffId": "guardA.1763835083988@example.com",
+      "adminId": 1,
+      "email": "guardA.1763835083988@example.com",
+      "firstName": "Guard",
+      "lastName": "One",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$GF2nl3VeepeVBmZh592UqeyjW/1dM4.NM7cCC46d3gJxrQhAP3e02",
+      "createdAt": 1763835093463,
+      "lastLogin": 1763835093642
+    },
+    {
+      "id": 23,
+      "staffId": "guardB.1763835083988@example.com",
+      "adminId": null,
+      "email": "guardB.1763835083988@example.com",
+      "firstName": "Guard",
+      "lastName": "Two",
+      "phone": null,
+      "role": "Guard",
+      "status": "Active",
+      "passwordHash": "$2a$10$Kg759urgyiu1espbAoEBbevcvxGbXSd.XzzlVNgExiTxVrQ.WdPPC",
+      "createdAt": 1763835093848,
       "lastLogin": null
     }
   ],
@@ -176,14 +372,148 @@
       "createdAt": 1763765515018
     },
     {
-      "token": "551c24ed19fd04dbc386207689401c0c",
+      "token": "ec945f4cdd53876fc0690cc98d6d124f",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764426857435,
+      "createdAt": 1763822057435
+    },
+    {
+      "token": "780d26d3d8f383c89f75850e98bd689c",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764426934214,
+      "createdAt": 1763822134215
+    },
+    {
+      "token": "2ca9cbfd912ba4398667cf23e7850a30",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764427127006,
+      "createdAt": 1763822327006
+    },
+    {
+      "token": "04ad0d3b441c11a784c278c7f4121529",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764427186698,
+      "createdAt": 1763822386698
+    },
+    {
+      "token": "f7a51cd661f6088249ac878679e29b9f",
       "ownerId": "guard1@example.com",
       "role": "staff",
-      "expires": 1764370399378,
-      "createdAt": 1763765599378
+      "expires": 1764427188294,
+      "createdAt": 1763822388294
+    },
+    {
+      "token": "a41805befe1f305bbd2b9189f74356e6",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764427234809,
+      "createdAt": 1763822434809
+    },
+    {
+      "token": "21ce7d17e41fbc3a2a4e85c08d448271",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764427349333,
+      "createdAt": 1763822549333
+    },
+    {
+      "token": "c6f9c4952a4c2ffde584fb2cc1fd22c5",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764427706967,
+      "createdAt": 1763822906967
+    },
+    {
+      "token": "9e3b201ea067590670f22afc763a587d",
+      "ownerId": "guardA.1763822905947@example.com",
+      "role": "staff",
+      "expires": 1764427708303,
+      "createdAt": 1763822908303
+    },
+    {
+      "token": "8259fabcc131d049e64a943c5c5ec9fe",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764431938355,
+      "createdAt": 1763827138355
+    },
+    {
+      "token": "904540d14e7b52465e5730111dc0c7d0",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764432585611,
+      "createdAt": 1763827785611
+    },
+    {
+      "token": "e4262d56c2914c10fe328a9c9bfe90a9",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764432653909,
+      "createdAt": 1763827853909
+    },
+    {
+      "token": "1d21a200990825adec87d0c001f257ae",
+      "ownerId": "guardA.1763827853536@example.com",
+      "role": "staff",
+      "expires": 1764432654442,
+      "createdAt": 1763827854442
+    },
+    {
+      "token": "8400bafa91146095d1019a79829e3f91",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764433380639,
+      "createdAt": 1763828580639
+    },
+    {
+      "token": "b6a2bc937febb89f1414435c0d59fd46",
+      "ownerId": "guardA.1763828578102@example.com",
+      "role": "staff",
+      "expires": 1764433381043,
+      "createdAt": 1763828581043
+    },
+    {
+      "token": "1ccaf619b29b3c7179e46907b2dd95d4",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764438636430,
+      "createdAt": 1763833836430
+    },
+    {
+      "token": "562c55a10b60b251edd71b93ae271132",
+      "ownerId": "guardA.1763833829293@example.com",
+      "role": "staff",
+      "expires": 1764438639620,
+      "createdAt": 1763833839620
+    },
+    {
+      "token": "592d9933ff32084de7cb4fb14cca234e",
+      "ownerId": "1",
+      "role": "admin",
+      "expires": 1764439893243,
+      "createdAt": 1763835093243
+    },
+    {
+      "token": "0a49bba45fcbeb3d30c20f69af769198",
+      "ownerId": "guardA.1763835083988@example.com",
+      "role": "staff",
+      "expires": 1764439893646,
+      "createdAt": 1763835093646
     }
   ],
-  "reset_tokens": [],
+  "reset_tokens": [
+    {
+      "token": "pr291ln1knso",
+      "type": "staff",
+      "ownerId": "guard1@example.com",
+      "expires": 1763823227081,
+      "createdAt": 1763822327081
+    }
+  ],
   "audit_logs": [
     {
       "id": 1,
@@ -436,6 +766,570 @@
       "ts": "2025-11-21T22:53:19.836Z",
       "action": "email.stub",
       "details": "{\"to\":\"guard3@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 43,
+      "ts": "2025-11-22T14:34:17.349Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 44,
+      "ts": "2025-11-22T14:34:17.439Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"ec945f...\"}"
+    },
+    {
+      "id": 45,
+      "ts": "2025-11-22T14:35:34.207Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 46,
+      "ts": "2025-11-22T14:35:34.216Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"780d26...\"}"
+    },
+    {
+      "id": 47,
+      "ts": "2025-11-22T14:38:46.994Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 48,
+      "ts": "2025-11-22T14:38:47.007Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"2ca9cb...\"}"
+    },
+    {
+      "id": 49,
+      "ts": "2025-11-22T14:38:47.104Z",
+      "action": "session.invalidate",
+      "details": "{\"ownerId\":\"guard1@example.com\",\"removed\":1}"
+    },
+    {
+      "id": 50,
+      "ts": "2025-11-22T14:38:47.106Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guard1@example.com\",\"subject\":\"MMadTrack360 password reset\"}"
+    },
+    {
+      "id": 51,
+      "ts": "2025-11-22T14:38:47.146Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guard1@example.com\",\"subject\":\"MMadTrack360 password reset\"}"
+    },
+    {
+      "id": 52,
+      "ts": "2025-11-22T14:38:47.160Z",
+      "action": "admin.staff.reset",
+      "details": "{\"staffId\":\"guard1@example.com\",\"by\":\"1\"}"
+    },
+    {
+      "id": 53,
+      "ts": "2025-11-22T14:39:46.687Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 54,
+      "ts": "2025-11-22T14:39:46.700Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"04ad0d...\"}"
+    },
+    {
+      "id": 55,
+      "ts": "2025-11-22T14:39:47.151Z",
+      "action": "session.invalidate",
+      "details": "{\"ownerId\":\"guard1@example.com\",\"removed\":0}"
+    },
+    {
+      "id": 56,
+      "ts": "2025-11-22T14:39:47.153Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guard1@example.com\",\"subject\":\"MMadTrack360 password reset\"}"
+    },
+    {
+      "id": 57,
+      "ts": "2025-11-22T14:39:47.188Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guard1@example.com\",\"subject\":\"MMadTrack360 password reset\"}"
+    },
+    {
+      "id": 58,
+      "ts": "2025-11-22T14:39:47.233Z",
+      "action": "admin.staff.reset",
+      "details": "{\"staffId\":\"guard1@example.com\",\"by\":\"1\"}"
+    },
+    {
+      "id": 59,
+      "ts": "2025-11-22T14:39:47.839Z",
+      "action": "session.invalidate",
+      "details": "{\"ownerId\":\"guard1@example.com\",\"removed\":0}"
+    },
+    {
+      "id": 60,
+      "ts": "2025-11-22T14:39:47.840Z",
+      "action": "staff.reset",
+      "details": "{\"staffId\":\"guard1@example.com\"}"
+    },
+    {
+      "id": 61,
+      "ts": "2025-11-22T14:39:48.287Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guard1@example.com\"}"
+    },
+    {
+      "id": 62,
+      "ts": "2025-11-22T14:39:48.305Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guard1@example.com\",\"role\":\"staff\",\"token\":\"f7a51c...\"}"
+    },
+    {
+      "id": 63,
+      "ts": "2025-11-22T14:39:48.620Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guard2@example.com\",\"createdBy\":\"guard1@example.com\"}"
+    },
+    {
+      "id": 64,
+      "ts": "2025-11-22T14:40:34.800Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 65,
+      "ts": "2025-11-22T14:40:34.813Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"a41805...\"}"
+    },
+    {
+      "id": 66,
+      "ts": "2025-11-22T14:40:35.072Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763822434350@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 67,
+      "ts": "2025-11-22T14:40:35.081Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763822434350@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 68,
+      "ts": "2025-11-22T14:40:35.097Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763822434350@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 69,
+      "ts": "2025-11-22T14:42:29.326Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 70,
+      "ts": "2025-11-22T14:42:29.337Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"21ce7d...\"}"
+    },
+    {
+      "id": 71,
+      "ts": "2025-11-22T14:42:29.628Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763822548831@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 72,
+      "ts": "2025-11-22T14:42:29.640Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763822548831@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 73,
+      "ts": "2025-11-22T14:42:29.892Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763822548831@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 74,
+      "ts": "2025-11-22T14:48:26.903Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 75,
+      "ts": "2025-11-22T14:48:26.968Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"c6f9c4...\"}"
+    },
+    {
+      "id": 76,
+      "ts": "2025-11-22T14:48:27.507Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763822905947@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 77,
+      "ts": "2025-11-22T14:48:27.540Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763822905947@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 78,
+      "ts": "2025-11-22T14:48:27.668Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763822905947@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 79,
+      "ts": "2025-11-22T14:48:28.283Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763822905947@example.com\"}"
+    },
+    {
+      "id": 80,
+      "ts": "2025-11-22T14:48:28.304Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763822905947@example.com\",\"role\":\"staff\",\"token\":\"9e3b20...\"}"
+    },
+    {
+      "id": 81,
+      "ts": "2025-11-22T14:48:28.467Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763822905947@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 82,
+      "ts": "2025-11-22T14:48:29.027Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763822905947@example.com\",\"createdBy\":\"guardA.1763822905947@example.com\"}"
+    },
+    {
+      "id": 83,
+      "ts": "2025-11-22T14:48:29.068Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763822905947@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 84,
+      "ts": "2025-11-22T14:48:29.107Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763822905947@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 85,
+      "ts": "2025-11-22T15:58:58.340Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 86,
+      "ts": "2025-11-22T15:58:58.355Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"8259fa...\"}"
+    },
+    {
+      "id": 87,
+      "ts": "2025-11-22T15:58:58.494Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763827137303@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 88,
+      "ts": "2025-11-22T15:58:58.502Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763827137303@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 89,
+      "ts": "2025-11-22T15:58:58.509Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763827137303@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 90,
+      "ts": "2025-11-22T16:09:45.608Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 91,
+      "ts": "2025-11-22T16:09:45.611Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"904540...\"}"
+    },
+    {
+      "id": 92,
+      "ts": "2025-11-22T16:10:53.524Z",
+      "action": "admin.role.assign",
+      "details": "{\"adminId\":1,\"role\":\"Administrator\"}"
+    },
+    {
+      "id": 93,
+      "ts": "2025-11-22T16:10:53.907Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 94,
+      "ts": "2025-11-22T16:10:53.909Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"e4262d...\"}"
+    },
+    {
+      "id": 95,
+      "ts": "2025-11-22T16:10:54.136Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763827853536@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 96,
+      "ts": "2025-11-22T16:10:54.143Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763827853536@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 97,
+      "ts": "2025-11-22T16:10:54.149Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763827853536@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 98,
+      "ts": "2025-11-22T16:10:54.429Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763827853536@example.com\"}"
+    },
+    {
+      "id": 99,
+      "ts": "2025-11-22T16:10:54.442Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763827853536@example.com\",\"role\":\"staff\",\"token\":\"1d21a2...\"}"
+    },
+    {
+      "id": 100,
+      "ts": "2025-11-22T16:10:54.530Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763827853536@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 101,
+      "ts": "2025-11-22T16:10:54.819Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763827853536@example.com\",\"createdBy\":\"guardA.1763827853536@example.com\"}"
+    },
+    {
+      "id": 102,
+      "ts": "2025-11-22T16:10:54.821Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763827853536@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 103,
+      "ts": "2025-11-22T16:10:54.822Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763827853536@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 104,
+      "ts": "2025-11-22T16:23:00.635Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 105,
+      "ts": "2025-11-22T16:23:00.639Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"8400ba...\"}"
+    },
+    {
+      "id": 106,
+      "ts": "2025-11-22T16:23:00.824Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763828578102@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 107,
+      "ts": "2025-11-22T16:23:00.828Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763828578102@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 108,
+      "ts": "2025-11-22T16:23:00.831Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763828578102@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 109,
+      "ts": "2025-11-22T16:23:01.042Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763828578102@example.com\"}"
+    },
+    {
+      "id": 110,
+      "ts": "2025-11-22T16:23:01.043Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763828578102@example.com\",\"role\":\"staff\",\"token\":\"b6a2bc...\"}"
+    },
+    {
+      "id": 111,
+      "ts": "2025-11-22T16:23:01.067Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763828578102@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 112,
+      "ts": "2025-11-22T16:23:01.251Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763828578102@example.com\",\"createdBy\":\"guardA.1763828578102@example.com\"}"
+    },
+    {
+      "id": 113,
+      "ts": "2025-11-22T16:23:01.253Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763828578102@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 114,
+      "ts": "2025-11-22T16:23:01.255Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763828578102@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 115,
+      "ts": "2025-11-22T17:50:36.118Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 116,
+      "ts": "2025-11-22T17:50:36.430Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"1ccaf6...\"}"
+    },
+    {
+      "id": 117,
+      "ts": "2025-11-22T17:50:39.444Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763833829293@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 118,
+      "ts": "2025-11-22T17:50:39.448Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763833829293@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 119,
+      "ts": "2025-11-22T17:50:39.452Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763833829293@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 120,
+      "ts": "2025-11-22T17:50:39.617Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763833829293@example.com\"}"
+    },
+    {
+      "id": 121,
+      "ts": "2025-11-22T17:50:39.620Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763833829293@example.com\",\"role\":\"staff\",\"token\":\"562c55...\"}"
+    },
+    {
+      "id": 122,
+      "ts": "2025-11-22T17:50:39.646Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763833829293@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 123,
+      "ts": "2025-11-22T17:50:39.807Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763833829293@example.com\",\"createdBy\":\"guardA.1763833829293@example.com\"}"
+    },
+    {
+      "id": 124,
+      "ts": "2025-11-22T17:50:39.820Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763833829293@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 125,
+      "ts": "2025-11-22T17:50:39.826Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763833829293@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 126,
+      "ts": "2025-11-22T18:11:33.240Z",
+      "action": "admin.login",
+      "details": "{\"email\":\"admin@local\"}"
+    },
+    {
+      "id": 127,
+      "ts": "2025-11-22T18:11:33.243Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"1\",\"role\":\"admin\",\"token\":\"592d99...\"}"
+    },
+    {
+      "id": 128,
+      "ts": "2025-11-22T18:11:33.464Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardA.1763835083988@example.com\",\"createdBy\":\"1\"}"
+    },
+    {
+      "id": 129,
+      "ts": "2025-11-22T18:11:33.471Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardA.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 130,
+      "ts": "2025-11-22T18:11:33.478Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardA.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 131,
+      "ts": "2025-11-22T18:11:33.642Z",
+      "action": "staff.login",
+      "details": "{\"staffId\":\"guardA.1763835083988@example.com\"}"
+    },
+    {
+      "id": 132,
+      "ts": "2025-11-22T18:11:33.646Z",
+      "action": "session.create",
+      "details": "{\"ownerId\":\"guardA.1763835083988@example.com\",\"role\":\"staff\",\"token\":\"0a49bb...\"}"
+    },
+    {
+      "id": 133,
+      "ts": "2025-11-22T18:11:33.666Z",
+      "action": "admin.role.assign",
+      "details": "{\"by\":\"1\",\"userType\":\"staff\",\"userId\":\"guardA.1763835083988@example.com\",\"roleName\":\"Supervisor\"}"
+    },
+    {
+      "id": 134,
+      "ts": "2025-11-22T18:11:33.848Z",
+      "action": "staff.create",
+      "details": "{\"staffId\":\"guardB.1763835083988@example.com\",\"createdBy\":\"guardA.1763835083988@example.com\"}"
+    },
+    {
+      "id": 135,
+      "ts": "2025-11-22T18:11:33.850Z",
+      "action": "email.enqueue",
+      "details": "{\"to\":\"guardB.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
+    },
+    {
+      "id": 136,
+      "ts": "2025-11-22T18:11:33.852Z",
+      "action": "email.stub",
+      "details": "{\"to\":\"guardB.1763835083988@example.com\",\"subject\":\"Your MMadTrack360 account\"}"
     }
   ],
   "subscription_tiers": [
@@ -572,6 +1466,36 @@
     {
       "userType": "staff",
       "userId": "guard1@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763822905947@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "admin",
+      "userId": "1",
+      "roleId": 1
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763827853536@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763828578102@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763833829293@example.com",
+      "roleId": 2
+    },
+    {
+      "userType": "staff",
+      "userId": "guardA.1763835083988@example.com",
       "roleId": 2
     }
   ]
