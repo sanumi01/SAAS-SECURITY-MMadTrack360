@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       className={`sidebar fixed left-0 top-0 h-screen z-20 transform transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0 w-[280px]' : '-translate-x-full md:w-20'}` + ' sidebar-bg'}
     >
   <div className="sidebar-header px-6 py-4 border-b sidebar-header-border">
-        <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src='/MMAD_App_logo_light.png' alt='MMadTrack360' className='w-8 h-8 object-contain rounded' onError={(e)=>{ (e.target as HTMLImageElement).style.display='none'; }} />
             <div>
@@ -52,13 +52,13 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
               <div className="text-xs text-white/80">Enterprise Security</div>
             </div>
           </div>
-          <button className="md:hidden p-2 text-slate-200" onClick={onClose} aria-label="Close sidebar">✕</button>
+          <button className="md:hidden p-2 text-white" onClick={onClose} aria-label="Close sidebar">✕</button>
         </div>
 
         {isOpen && (
           <div className="mt-3 flex items-center justify-between">
-            <div className="text-xs text-slate-200/80">ENTERPRISE PLAN</div>
-            <div className="text-xs text-white/80 font-semibold">📋</div>
+            <div className="text-xs text-white/85 font-medium">ENTERPRISE PLAN</div>
+            <div className="text-xs text-white font-semibold">📋</div>
           </div>
         )}
       </div>
@@ -68,7 +68,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <div key={item.name}>
             {item.children ? (
               <div>
-                <button onClick={() => toggleMenu(item.name)} className={`w-full flex items-center gap-3 px-5 py-3 text-slate-200 text-sm transition-all duration-200 cursor-pointer sidebar-item-hover` }>
+                <button onClick={() => toggleMenu(item.name)} className={`w-full flex items-center gap-3 px-5 py-3 text-white text-sm font-medium transition-all duration-200 cursor-pointer sidebar-item-hover` }>
                       <span className="menu-item-icon">{item.icon}</span>
                   <span className={`${isOpen ? 'inline' : 'hidden'}`}>{item.name}</span>
                   <span className={`${isOpen ? 'ml-auto' : 'hidden'}`}>▸</span>
@@ -76,7 +76,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 {openMenus[item.name] && (
                   <div className="ml-8 mt-1 mb-2 sidebar-children">
                     {item.children.map((c: any) => (
-                      <NavLink key={c.name} to={c.to} className={({ isActive }) => `block px-4 py-2 text-sm rounded text-slate-200 ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`} onClick={() => { if (onClose) onClose(); }}>
+                      <NavLink key={c.name} to={c.to} className={({ isActive }) => `block px-4 py-2 text-sm rounded text-white/92 ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`} onClick={() => { if (onClose) onClose(); }}>
                         {c.name}
                       </NavLink>
                     ))}
@@ -88,7 +88,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 key={item.name}
                 to={item.to}
                 className={({ isActive }) =>
-                  `menu-item flex items-center gap-3 px-5 py-3 text-slate-200 text-sm transition-all duration-200 cursor-pointer ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`
+                  `menu-item flex items-center gap-3 px-5 py-3 text-white text-sm font-medium transition-all duration-200 cursor-pointer ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`
                 }
                 onClick={() => { if (onClose) onClose(); }}
               >
