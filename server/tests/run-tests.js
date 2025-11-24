@@ -32,8 +32,19 @@ function checkMtime() {
 }
 
 const pollHandle = setInterval(checkMtime, 500);
+let foundFlushLog = false;
 
-const child = fork(testScript, { cwd: path.join(__dirname, '..'), env, stdio: 'inherit' });
+// capture child stdout so we can assert periodic-flush log messages appear
+const child = fork(testScript, { cwd: path.join(__dirname, '..'), env, stdio: ['inherit', 'pipe', 'inherit'] });
+if (child.stdout) {
+	child.stdout.on('data', (chunk) => {
+		const s = String(chunk);
+		// mirror child's stdout to parent stdout for visibility
+		process.stdout.write(s);
+		if (s.includes('[DB] periodic flush triggered') || s.includes('[DB] flushSync completed')) foundFlushLog = true;
+	});
+}
+
 child.on('exit', (code) => {
 	clearInterval(pollHandle);
 	// final check
@@ -42,6 +53,10 @@ child.on('exit', (code) => {
 		console.error('[TEST] periodic-flush verification failed: db.json mtime did not change during test run');
 		// non-zero exit to fail CI
 		process.exit(2);
+	}
+	if (!foundFlushLog) {
+		console.error('[TEST] periodic-flush verification failed: flush log not observed in stdout');
+		process.exit(3);
 	}
 	process.exit(code);
 });

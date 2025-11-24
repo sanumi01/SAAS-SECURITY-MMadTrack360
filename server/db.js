@@ -201,9 +201,13 @@ CREATE TABLE IF NOT EXISTS user_roles (
           // If there's a pending debounced write, flush immediately to ensure
           // changes hit disk regularly. Otherwise, trigger a save which will
           // schedule a debounced write.
+          console.log('[DB] periodic flush triggered');
           if (pendingWrite) {
+            console.log('[DB] pending debounced write detected, performing flushSync');
             flushSync();
+            console.log('[DB] flushSync completed');
           } else {
+            console.log('[DB] no pending write, scheduling save()');
             save();
           }
         } catch (e) {
