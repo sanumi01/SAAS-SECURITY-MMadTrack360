@@ -113,29 +113,29 @@ const AdminDashboard = () => {
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 bg-slate-100 rounded-full flex items-center justify-center">JS</div>
                 <div>
-                  <div className="text-sm font-medium">John Smith <span className="text-xs text-slate-400">• 2 min ago</span></div>
-                  <div className="text-sm text-slate-500">Staff check-in</div>
+                  <div className="text-sm font-medium">John Smith <span className="text-xs text-white/70">• 2 min ago</span></div>
+                  <div className="text-sm text-white/75">Staff check-in</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 bg-slate-100 rounded-full flex items-center justify-center">SJ</div>
                 <div>
-                  <div className="text-sm font-medium">Sarah Johnson <span className="text-xs text-slate-400">• 5 min ago</span></div>
-                  <div className="text-sm text-slate-500">Alert resolved</div>
+                  <div className="text-sm font-medium">Sarah Johnson <span className="text-xs text-white/70">• 5 min ago</span></div>
+                  <div className="text-sm text-white/75">Alert resolved</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 bg-slate-100 rounded-full flex items-center justify-center">MD</div>
                 <div>
-                  <div className="text-sm font-medium">Mike Davis <span className="text-xs text-slate-400">• 8 min ago</span></div>
-                  <div className="text-sm text-slate-500">QR scan completed</div>
+                  <div className="text-sm font-medium">Mike Davis <span className="text-xs text-white/70">• 8 min ago</span></div>
+                  <div className="text-sm text-white/75">QR scan completed</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 bg-slate-100 rounded-full flex items-center justify-center">SY</div>
                 <div>
-                  <div className="text-sm font-medium">System <span className="text-xs text-slate-400">• 12 min ago</span></div>
-                  <div className="text-sm text-slate-500">Emergency drill</div>
+                  <div className="text-sm font-medium">System <span className="text-xs text-white/70">• 12 min ago</span></div>
+                  <div className="text-sm text-white/75">Emergency drill</div>
                 </div>
               </li>
             </ul>

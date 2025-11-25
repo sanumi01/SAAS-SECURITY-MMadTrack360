@@ -27,7 +27,7 @@ export default function Sidebar() {
             key={item.name}
             to={item.to}
             className={({ isActive }) =>
-              `menu-item flex items-center gap-3 px-5 py-3 text-slate-400 text-sm transition-all duration-200 cursor-pointer ${isActive ? 'active bg-slate-800 text-cyan-400 border-l-4 border-cyan-400 font-semibold' : 'hover:bg-slate-800 hover:text-cyan-400 hover:border-l-4 hover:border-cyan-400'}`
+              `menu-item flex items-center gap-3 px-5 py-3 text-white/70 text-sm transition-all duration-200 cursor-pointer ${isActive ? 'active bg-slate-800 text-cyan-400 border-l-4 border-cyan-400 font-semibold' : 'hover:bg-slate-800 hover:text-cyan-400 hover:border-l-4 hover:border-cyan-400'}`
             }
           >
             <span className="menu-item-icon">{item.icon}</span>

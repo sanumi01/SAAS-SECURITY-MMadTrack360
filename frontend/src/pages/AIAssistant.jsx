@@ -38,7 +38,7 @@ export default function AIAssistant() {
         </div>
 
         <div className='panel-bg rounded-2xl p-6 shadow-lg'>
-          <h3 className='text-sm text-slate-500'>Smart Recommendations</h3>
+          <h3 className='text-sm text-white/75'>Smart Recommendations</h3>
           <div className='mt-3 space-y-3'>
             <div className='p-3 bg-white/6 rounded'>
               <div className='font-medium text-white/90'>Optimize Night Shift Coverage</div>

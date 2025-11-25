@@ -14,13 +14,13 @@ function Landing() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-slate-950">
       <div className="bg-slate-900 p-10 rounded-2xl shadow-2xl w-full max-w-xl text-center">
         <h1 className="text-4xl font-extrabold text-blue-400 mb-4">MMadTrack360 Security</h1>
-        <p className="text-slate-300 mb-8">Enterprise SaaS for staff management, location tracking, and security alerts.</p>
+        <p className="text-white/75 mb-8">Enterprise SaaS for staff management, location tracking, and security alerts.</p>
         <div className="flex flex-col gap-4">
           <a href="/login" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg font-bold text-lg transition">Staff/Admin Login</a>
           <a href="/admin-signup" className="w-full bg-slate-800 hover:bg-slate-700 text-blue-300 py-4 rounded-lg font-bold text-lg transition">Admin Signup</a>
         </div>
       </div>
-      <div className="mt-8 text-slate-400 text-sm text-center max-w-lg">
+      <div className="mt-8 text-white/70 text-sm text-center max-w-lg">
         <span>Competitive features: PWA, real-time updates, analytics, mobile support, and more.</span>
       </div>
     </div>

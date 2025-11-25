@@ -67,14 +67,14 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
           placeholder="Enter User ID"
           value={userId}
           onChange={e => { setUserId(e.target.value); setError('') }}
-          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-slate-500"
+          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-white/65"
         />
-        <label htmlFor="role" className="text-slate-300 mb-1 block font-medium">Role</label>
+        <label htmlFor="role" className="text-white/75 mb-1 block font-medium">Role</label>
         <select
           id="role"
           value={role}
           onChange={e => setRole(e.target.value as 'admin' | 'staff')}
-          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2"
+          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2"
         >
           <option value="staff">Staff</option>
           <option value="admin">Admin</option>
@@ -85,7 +85,7 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
             placeholder="Password"
             value={password}
             onChange={e => { setPassword(e.target.value); setError('') }}
-            className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-slate-500"
+            className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-white/65"
           />
         )}
         {error && <div className="text-rose-500 mb-2 text-sm font-medium text-center animate-shake">{error}</div>}

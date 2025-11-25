@@ -46,7 +46,7 @@ export default function StaffDashboard() {
       )}
       <div className="p-8 max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-400 mb-4">Staff Dashboard</h1>
-        <div className="bg-slate-900 p-6 rounded-xl shadow-xl">
+          <div className="bg-slate-900 p-6 rounded-xl shadow-xl">
           <ul className="space-y-4">
             <li><a href="/location" className="text-blue-300 hover:underline">Location Tracking</a></li>
             <li><a href="/checkin" className="text-blue-300 hover:underline">Check-In</a></li>
@@ -54,10 +54,10 @@ export default function StaffDashboard() {
             <li><a href="/alert" className="text-blue-300 hover:underline">Send Alert</a></li>
           </ul>
           <div className="mt-8">
-            <h2 className="text-lg text-slate-200 mb-2">Real-Time Updates</h2>
-            <div className="bg-slate-800 p-4 rounded text-slate-300 text-sm">
+            <h2 className="text-lg text-white/85 mb-2">Real-Time Updates</h2>
+            <div className="bg-slate-800 p-4 rounded text-white/75 text-sm">
               {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Waiting for real-time data...'}
-              <div className="mt-2 text-xs text-slate-400">Tip: Real-time data is updated automatically. Check for new alerts and status changes here.</div>
+              <div className="mt-2 text-xs text-white/70">Tip: Real-time data is updated automatically. Check for new alerts and status changes here.</div>
             </div>
             <button
               onClick={() => {
