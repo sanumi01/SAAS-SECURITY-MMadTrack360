@@ -52,8 +52,8 @@
   --primary-200: var(--primary-300);
   --primary-700-alt: var(--primary-700);
 
-  /* Panels and surfaces tuned for the dark gradient background */
-  --panel-bg: rgba(255,255,255,0.04);
+  /* Panels and surfaces tuned for the dark gradient background: use dark translucent surface instead of white wash */
+  --panel-bg: rgba(2,6,23,0.60); /* dark surface to keep text readable */
   --panel-dark: #111827;
   --chart-bg: rgba(30,60,114,0.06);
   --sidebar-from: var(--primary-900);
@@ -89,17 +89,17 @@ body {
 
 /* Panel background used across admin cards to increase contrast over the gradient */
 .panel-bg {
-  /* slightly stronger surface so text is readable over the gradient */
-  background-color: rgba(255,255,255,0.06);
+  /* use a dark translucent panel (avoids white-wash) */
+  background-color: var(--panel-bg);
   color: rgba(255,255,255,0.98);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* Slightly more muted panels for interior small cards / stats */
 .panel-muted {
-  background-color: rgba(255,255,255,0.03);
+  background-color: rgba(255,255,255,0.01); /* keep very subtle, but text clearer */
   color: rgba(255,255,255,0.92);
 }
 
@@ -133,20 +133,20 @@ body {
 .auth-card {
   width: 100%;
   max-width: 480px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(2,6,23,0.56); /* dark translucent surface */
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
 }
 .auth-header {
   text-align: left;
   margin-bottom: 12px;
 }
-.auth-title {
+  .auth-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--white);9-
+  color: var(--white);
 }
 .auth-subtitle {
   font-size: 0.9rem;

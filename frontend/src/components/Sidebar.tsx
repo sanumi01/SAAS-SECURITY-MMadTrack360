@@ -68,7 +68,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <div key={item.name}>
             {item.children ? (
               <div>
-                <button onClick={() => toggleMenu(item.name)} className={`w-full flex items-center gap-3 px-5 py-3 text-white text-sm font-medium transition-all duration-200 cursor-pointer sidebar-item-hover` }>
+                <button onClick={() => toggleMenu(item.name)} className={`w-full flex items-center gap-3 px-5 py-3 text-white text-base font-semibold transition-all duration-200 cursor-pointer sidebar-item-hover` }>
                       <span className="menu-item-icon">{item.icon}</span>
                   <span className={`${isOpen ? 'inline' : 'hidden'}`}>{item.name}</span>
                   <span className={`${isOpen ? 'ml-auto' : 'hidden'}`}>▸</span>
@@ -76,7 +76,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 {openMenus[item.name] && (
                   <div className="ml-8 mt-1 mb-2 sidebar-children">
                     {item.children.map((c: any) => (
-                      <NavLink key={c.name} to={c.to} className={({ isActive }) => `block px-4 py-2 text-sm rounded text-white/92 ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`} onClick={() => { if (onClose) onClose(); }}>
+                      <NavLink key={c.name} to={c.to} className={({ isActive }) => `block px-4 py-2 text-sm rounded text-white ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`} onClick={() => { if (onClose) onClose(); }}>
                         {c.name}
                       </NavLink>
                     ))}
@@ -88,7 +88,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 key={item.name}
                 to={item.to}
                 className={({ isActive }) =>
-                  `menu-item flex items-center gap-3 px-5 py-3 text-white text-sm font-medium transition-all duration-200 cursor-pointer ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`
+                  `menu-item flex items-center gap-3 px-5 py-3 text-white text-base font-semibold transition-all duration-200 cursor-pointer ${isActive ? 'sidebar-item-active' : 'sidebar-item-hover hover:text-[var(--primary-500)]'}`
                 }
                 onClick={() => { if (onClose) onClose(); }}
               >
