@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@/components/ui/Button';
 
 export default function AIAssistant() {
   const [messages, setMessages] = useState([
@@ -33,7 +34,7 @@ export default function AIAssistant() {
 
           <div className='mt-4 flex gap-2'>
             <input value={input} onChange={e => setInput(e.target.value)} placeholder='Ask about schedules, predictions, or optimizations...' className='flex-1 px-3 py-2 rounded bg-white/6 text-white border border-white/10' />
-            <button onClick={sendMessage} className='px-3 py-2 rounded bg-white/10 text-white'>Send</button>
+            <Button onClick={sendMessage} className='px-3 py-2' variant='default'>Send</Button>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BellIcon } from '@heroicons/react/24/solid';
+import { Button } from '@/components/ui/Button';
 
 export default function Notifications() {
   const notifications = [
@@ -16,7 +17,7 @@ export default function Notifications() {
           <h1 className="text-2xl font-semibold">Notifications</h1>
         </div>
         <div>
-          <button className="px-3 py-2 bg-white/6 rounded shadow text-sm text-white">Mark all read</button>
+          <Button className="px-3 py-2 text-sm" variant="ghost">Mark all read</Button>
         </div>
       </div>
 

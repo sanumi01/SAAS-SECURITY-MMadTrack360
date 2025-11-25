@@ -1,5 +1,6 @@
 import { ChartBarIcon, UsersIcon, MapIcon, ChatBubbleLeftRightIcon, ArrowTrendingUpIcon, QrCodeIcon, KeyIcon, BellIcon, DocumentTextIcon, CreditCardIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import { Button } from '@/components/ui/Button';
 import { NavLink } from 'react-router-dom';
 
 const menu = [
@@ -101,7 +102,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       </nav>
 
   <div className="px-4 py-3 border-t sidebar-bottom-border">
-        <button onClick={() => window.location.href = '/admin/analytics'} className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded bg-white/10 text-white text-sm">📋 Generate Report</button>
+        <Button className="w-full flex items-center justify-center gap-2 text-sm" variant="ghost" onClick={() => window.location.href = '/admin/analytics'}>📋 Generate Report</Button>
       </div>
     </aside>
   );
