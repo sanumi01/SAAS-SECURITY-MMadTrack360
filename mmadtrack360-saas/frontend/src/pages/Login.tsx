@@ -52,7 +52,7 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-indigo-600 opacity-30 blur-3xl animate-pulse" />
       </div>
-      <form onSubmit={handleSubmit} className="relative z-10 bg-white/10 backdrop-blur-xl border border-slate-700 shadow-2xl rounded-2xl w-full max-w-md p-10 flex flex-col gap-4 animate-fade-in">
+      <form onSubmit={handleSubmit} className="relative z-10 bg-white/6 backdrop-blur-sm border border-slate-700 shadow-2xl rounded-2xl w-full max-w-md p-10 flex flex-col gap-4 animate-fade-in">
         <div className="flex flex-col items-center mb-4">
           <span className="flex items-center gap-2 text-cyan-400 font-bold text-2xl mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -67,14 +67,14 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
           placeholder="Enter User ID"
           value={userId}
           onChange={e => { setUserId(e.target.value); setError('') }}
-          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-slate-500"
+          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-white/65"
         />
-        <label htmlFor="role" className="text-slate-300 mb-1 block font-medium">Role</label>
+        <label htmlFor="role" className="text-white/75 mb-1 block font-medium">Role</label>
         <select
           id="role"
           value={role}
           onChange={e => setRole(e.target.value as 'admin' | 'staff')}
-          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2"
+          className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2"
         >
           <option value="staff">Staff</option>
           <option value="admin">Admin</option>
@@ -85,7 +85,7 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
             placeholder="Password"
             value={password}
             onChange={e => { setPassword(e.target.value); setError('') }}
-            className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-slate-100 border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-slate-500"
+            className="w-full px-4 py-3 rounded-lg bg-slate-900/80 text-white border border-slate-700 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition mb-2 placeholder:text-white/65"
           />
         )}
         {error && <div className="text-rose-500 mb-2 text-sm font-medium text-center animate-shake">{error}</div>}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BellIcon } from '@heroicons/react/24/solid';
+import { Button } from '@/components/ui/Button';
 
 export default function Notifications() {
   const notifications = [
@@ -16,17 +17,17 @@ export default function Notifications() {
           <h1 className="text-2xl font-semibold">Notifications</h1>
         </div>
         <div>
-          <button className="px-3 py-2 bg-white rounded shadow text-sm">Mark all read</button>
+          <Button className="px-3 py-2 text-sm" variant="ghost">Mark all read</Button>
         </div>
       </div>
 
       <div className="space-y-3">
         {notifications.map(n => (
-          <div key={n.id} className="p-3 bg-white rounded shadow-sm flex items-start gap-3">
-            <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-sm font-semibold">{n.title.charAt(0)}</div>
+          <div key={n.id} className="p-3 bg-white/6 rounded shadow-sm flex items-start gap-3">
+            <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-sm font-semibold text-white">{n.title.charAt(0)}</div>
             <div>
-              <div className="font-medium">{n.title}</div>
-              <div className="text-xs text-slate-500">{n.time}</div>
+              <div className="font-medium text-white">{n.title}</div>
+              <div className="text-xs text-white/75">{n.time}</div>
             </div>
           </div>
         ))}

@@ -32,7 +32,7 @@ export default function StaffLogin({ onLogin }: StaffLoginProps) {
         {error && <div className="text-rose-600 mb-4 text-sm">{error}</div>}
         <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">Login</button>
       </form>
-      <div className="mt-8 text-slate-400 text-sm text-center">
+      <div className="mt-8 text-white/70 text-sm text-center">
         Access restricted to authorized staff only. Please contact your admin for access.
       </div>
     </div>

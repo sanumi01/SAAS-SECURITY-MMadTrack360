@@ -21,18 +21,18 @@ export default function SearchResults() {
   return (
     <div className='min-h-screen'>
       <div className='panel-bg p-6 rounded-md'>
-        <h1 className='text-2xl font-semibold mb-2'>Search results for "{q}"</h1>
-        <p className='text-sm text-muted mb-4'>Showing {results.length} result(s)</p>
+        <h1 className='text-2xl font-semibold mb-2 text-white'>Search results for "{q}"</h1>
+        <p className='text-sm text-white/75 mb-4'>Showing {results.length} result(s)</p>
 
         <div className='space-y-3'>
           {results.map(r => (
-            <Link key={r.id} to='#' className='block p-3 bg-white/5 rounded hover:bg-white/6'>
+            <Link key={r.id} to='#' className='block p-3 bg-white/6 rounded hover:bg-white/8'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <div className='font-medium'>{r.title}</div>
-                  <div className='text-xs text-muted'>{r.type} — {r.desc}</div>
+                  <div className='font-medium text-white'>{r.title}</div>
+                  <div className='text-xs text-white/70'>{r.type} — {r.desc}</div>
                 </div>
-                <div className='text-xs text-slate-300'>View</div>
+                <div className='text-xs text-white/75'>View</div>
               </div>
             </Link>
           ))}

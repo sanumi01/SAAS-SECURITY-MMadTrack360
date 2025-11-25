@@ -23,20 +23,20 @@ export default function StaffLocation() {
       <main className="main-content flex-1 ml-[280px] px-8 py-8">
         <div className="page-header mb-8">
           <h1 className="page-title text-3xl font-bold text-cyan-400 mb-2">Live Location Tracking</h1>
-          <p className="page-subtitle text-slate-400 text-base">Real-time staff location monitoring</p>
+          <p className="page-subtitle text-white/70 text-base">Real-time staff location monitoring</p>
         </div>
         <div className="analytics-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div className="stat-card bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col items-center">
             <MapPinIcon className="h-8 w-8 text-blue-400 mb-2" />
-            <div className="stat-label text-slate-400 text-sm">Online Staff</div>
+            <div className="stat-label text-white/70 text-sm">Online Staff</div>
             <div className="stat-value text-3xl font-bold text-cyan-400 my-2">18</div>
-            <div className="stat-label text-slate-400 text-xs">Currently tracking</div>
+            <div className="stat-label text-white/70 text-xs">Currently tracking</div>
           </div>
           <div className="stat-card bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col items-center">
             <UserGroupIcon className="h-8 w-8 text-blue-400 mb-2" />
-            <div className="stat-label text-slate-400 text-sm">Geofences</div>
+            <div className="stat-label text-white/70 text-sm">Geofences</div>
             <div className="stat-value text-3xl font-bold text-cyan-400 my-2">5</div>
-            <div className="stat-label text-slate-400 text-xs">Active zones</div>
+            <div className="stat-label text-white/70 text-xs">Active zones</div>
           </div>
         </div>
         <div className="content-card bg-slate-800 border border-slate-700 rounded-xl p-8 mb-8">
@@ -52,7 +52,7 @@ export default function StaffLocation() {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-2 flex gap-2 flex-wrap">
-            <span className="text-xs text-slate-400">Filter by area:</span>
+            <span className="text-xs text-white/70">Filter by area:</span>
             {locationEvents.map(e => (
               <button
                 key={e.area}

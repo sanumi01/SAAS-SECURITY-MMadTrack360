@@ -64,13 +64,13 @@ export default function StaffCheckin() {
             <span className="text-xl font-bold text-emerald-400">Staff Check-In</span>
           </div>
           <div className="flex gap-4">
-            <button className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 transition-colors">
+            <button className="flex items-center gap-1 text-white/75 hover:text-emerald-400 transition-colors">
               <UserGroupIcon className="h-5 w-5" aria-hidden="true" /> Staff
             </button>
-            <button className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 transition-colors">
+            <button className="flex items-center gap-1 text-white/75 hover:text-emerald-400 transition-colors">
               <MapPinIcon className="h-5 w-5" aria-hidden="true" /> Location
             </button>
-            <button className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 transition-colors">
+            <button className="flex items-center gap-1 text-white/75 hover:text-emerald-400 transition-colors">
               <BellIcon className="h-5 w-5" aria-hidden="true" /> Alerts
             </button>
           </div>
@@ -80,7 +80,7 @@ export default function StaffCheckin() {
           {statCards.map(card => (
             <div key={card.label} className="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col items-center shadow">
               {card.icon}
-              <div className="text-slate-400 text-xs mt-2">{card.label}</div>
+              <div className="text-white/70 text-xs mt-2">{card.label}</div>
               <div className="text-2xl font-bold text-cyan-400 my-1">{card.value}</div>
             </div>
           ))}
@@ -95,7 +95,7 @@ export default function StaffCheckin() {
           </button>
           {checkedIn && <div className="mt-4 text-emerald-500">You are checked in!</div>}
           <p className="mt-4">Check-in status and updates will appear here.</p>
-          <div className="mt-4 bg-slate-800 p-4 rounded text-slate-300 text-sm min-h-[60px] flex items-center justify-center">
+          <div className="mt-4 bg-slate-800 p-4 rounded text-white/75 text-sm min-h-[60px] flex items-center justify-center">
             {loading ? (
               <span className="animate-spin mr-2">🔄</span>
             ) : checkinData ? (
@@ -118,7 +118,7 @@ export default function StaffCheckin() {
               </PieChart>
             </ResponsiveContainer>
             <div className="mt-2 flex gap-2 flex-wrap">
-              <span className="text-xs text-slate-400">Filter by status:</span>
+              <span className="text-xs text-white/70">Filter by status:</span>
               {checkinStatusRaw.map(s => (
                 <button
                   key={s.name}

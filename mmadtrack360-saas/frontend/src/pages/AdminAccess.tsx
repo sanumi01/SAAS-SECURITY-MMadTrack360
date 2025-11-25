@@ -72,7 +72,7 @@ export default function AdminAccess() {
           </tbody>
         </table>
       </div>
-      <div className="mt-4 bg-slate-800 p-4 rounded text-slate-300 text-sm">
+      <div className="mt-4 bg-slate-800 p-4 rounded text-white/75 text-sm">
         <strong>Real-Time Staff Updates:</strong>
         <div className="mt-2">
           {staffUpdates ? <pre>{JSON.stringify(staffUpdates, null, 2)}</pre> : 'Waiting for staff updates...'}

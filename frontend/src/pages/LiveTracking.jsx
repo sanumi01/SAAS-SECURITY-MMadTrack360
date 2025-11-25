@@ -12,24 +12,24 @@ export default function LiveTracking() {
 
       <div className='grid lg:grid-cols-2 gap-6'>
         <div className='panel-bg rounded-2xl p-6 shadow-lg'>
-          <div className='text-sm text-slate-500'>Map View</div>
+          <div className='text-sm text-white/75'>Map View</div>
           <div className='mt-4 h-72 bg-white/30 rounded flex items-center justify-center text-slate-200'>Map placeholder</div>
         </div>
 
         <div className='panel-bg rounded-2xl p-6 shadow-lg'>
-          <h3 className='text-sm text-slate-500'>Live Staff Status</h3>
+          <h3 className='text-sm text-white/75'>Live Staff Status</h3>
           <ul className='mt-4 space-y-3 text-slate-800'>
             <li className='flex items-center justify-between'>
               <div>
                 <div className='font-medium'>John Smith</div>
-                <div className='text-xs text-slate-500'>Security • ON DUTY</div>
+                <div className='text-xs text-white/75'>Security • ON DUTY</div>
               </div>
               <div className='text-sm font-semibold text-[var(--primary-700)]'>94%</div>
             </li>
             <li className='flex items-center justify-between'>
               <div>
                 <div className='font-medium'>Sarah Johnson</div>
-                <div className='text-xs text-slate-500'>Security • ON DUTY</div>
+                <div className='text-xs text-white/75'>Security • ON DUTY</div>
               </div>
               <div className='text-sm font-semibold text-[var(--primary-700)]'>98%</div>
             </li>

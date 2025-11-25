@@ -56,7 +56,7 @@ export default function AdminSignup({ onSignup }: { onSignup: (admin: { username
         <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">Sign Up</button>
       </form>
   {toast && <div className="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50">{toast}</div>}
-  <div className="mt-8 text-slate-400 text-sm text-center">
+  <div className="mt-8 text-white/70 text-sm text-center">
         Already have an account? <Link to="/login" className="text-blue-400 underline">Go to Login</Link>.
       </div>
     </div>

@@ -33,8 +33,8 @@ export default function AnalyticsDashboard() {
       <Sidebar />
       <main className="main-content flex-1 ml-[280px] px-8 py-8">
         <div className="page-header mb-8">
-          <h1 className="page-title text-3xl font-bold text-cyan-400 mb-2">Dashboard Overview</h1>
-          <p className="page-subtitle text-slate-400 text-base">Welcome to your security management platform</p>
+          <h1 className="page-title text-3xl font-bold text-white/96 mb-2">Dashboard Overview</h1>
+          <p className="page-subtitle text-white/75 text-base font-medium">Welcome to your security management platform</p>
         </div>
         <div className="analytics-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map(stat => (
