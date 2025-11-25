@@ -92,7 +92,7 @@ function Login() {
       </div>
       {/* Admin Signup Modal */}
       {showSignup && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black/60 z-40 flex items-center justify-center">
           <div className="panel-bg rounded-2xl p-6 shadow-lg w-full max-w-md relative">
             <button className="absolute top-4 right-4 text-white text-2xl" onClick={() => setShowSignup(false)} aria-label="Close">&times;</button>
             <h2 className="text-xl font-bold mb-4 text-white">Create account</h2>

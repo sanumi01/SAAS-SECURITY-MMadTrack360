@@ -14,7 +14,7 @@ const menu = [
 
 export default function Sidebar() {
   return (
-    <aside className="sidebar fixed left-0 top-0 h-screen w-[280px] bg-gradient-to-b from-slate-800 to-slate-900 border-r border-slate-700 z-50">
+    <aside className="sidebar fixed left-0 top-0 h-screen w-[280px] bg-gradient-to-b from-slate-800 to-slate-900 border-r border-slate-700 z-60">
       <div className="sidebar-header px-6 py-6 border-b border-slate-700">
         <div className="sidebar-logo flex items-center gap-2 text-cyan-400 font-bold text-xl">
           <ChartBarIcon className="w-6 h-6" />

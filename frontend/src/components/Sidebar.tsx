@@ -41,7 +41,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
   // mobile: translate-x-0 when open, -translate-x-full when closed
   return (
     <aside
-      className={`sidebar fixed left-0 top-0 h-screen z-20 transform transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0 w-[280px]' : '-translate-x-full md:w-20'}` + ' sidebar-bg'}
+      className={`sidebar fixed left-0 top-0 h-screen z-50 transform transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0 w-[280px]' : '-translate-x-full md:w-20'}` + ' sidebar-bg'}
     >
   <div className="sidebar-header px-6 py-4 border-b sidebar-header-border">
             <div className="flex items-center justify-between">

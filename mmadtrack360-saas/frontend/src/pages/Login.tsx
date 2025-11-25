@@ -52,7 +52,7 @@ export default function Login({ onLogin }: { onLogin: (user: { id: string, role:
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-indigo-600 opacity-30 blur-3xl animate-pulse" />
       </div>
-      <form onSubmit={handleSubmit} className="relative z-10 bg-white/10 backdrop-blur-xl border border-slate-700 shadow-2xl rounded-2xl w-full max-w-md p-10 flex flex-col gap-4 animate-fade-in">
+      <form onSubmit={handleSubmit} className="relative z-10 bg-white/6 backdrop-blur-sm border border-slate-700 shadow-2xl rounded-2xl w-full max-w-md p-10 flex flex-col gap-4 animate-fade-in">
         <div className="flex flex-col items-center mb-4">
           <span className="flex items-center gap-2 text-cyan-400 font-bold text-2xl mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
